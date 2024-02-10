@@ -1,0 +1,279 @@
+body {
+	background-color: #e8e8e8;
+	font-family: open_sansregular, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.45;
+	margin: 50px 0px;
+	padding: 0px;
+	text-align: center;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    /*background-color: #303030;*/
+	background-color: #d0d0d0;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #f8f8f8;
+  }
+}
+
+a.menu {
+	color: white;
+}
+
+h1.heading {
+	/*color: white;
+	background-color: #5070c0;*/
+	text-align: left;
+	font-size: 160%;
+	padding: 4px;
+	width: 65%;
+	min-width: 240pt;
+	font-weight: normal;
+	border-bottom: 2px solid #5070c0;
+	margin-top:1.3em;
+}
+
+h2.heading {
+	/*color: white;
+	background-color: #5070c0;*/
+	text-align: left;
+	font-size: 120%;
+	font-weight: normal;
+	padding: 4px;
+}
+
+p {
+	text-align: justify;
+}
+
+p.new{
+	border-style: solid;
+	border-width: 0px 0px 0px 5px;
+	border-color: blue;
+	padding: 8px;
+}
+p.new::before {
+	content: 'NEW - \A';
+	font-weight: bold;
+	color: blue;
+}
+
+
+ul li img {
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+
+div.main {
+	width: 90%;
+	min-width: 450px;
+	margin: 0px auto;
+	padding-top: 20px;
+	border: 0px solid #888;
+	/*background-color: white;*/
+	/*color: #203080;*/
+	color: #707070;
+}
+
+
+div.banner {
+	margin: 0px auto;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	min-width: 470px;
+	color: white;
+	background: rgba(80, 113, 192, 1.0);
+	/*background: rgba(182,182,182, 1.0);*/
+	/*background-image: url('crystal_text.png');
+	background-size: cover;
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-blend-mode: overlay;*/
+	height: 200px;
+	/* offsetTop:500; */
+}
+
+div.news {
+		padding:16px;
+/*		margin:1px 0em 1px 1.5em; */
+		background:#f1f1f1;
+		color: black;
+		border-radius: 10px;
+}
+
+div.sections {
+		padding:16px;
+/*		margin:1px 0em 1px 1.5em; */
+		background:#f1f1f1;
+		/*color: black;*/
+		border-radius: 10px;
+		max-width: fit-content;
+}
+
+div.sticky {
+	height:90px;
+	/*background: rgba(80, 113, 192, 0.0);*/
+}
+
+div.container{
+	display: inline-block;
+}
+
+div.content {
+	text-align: left;
+	width: 100%;
+	max-width: 864px;
+	margin: 0px auto;
+}
+
+div.sticky+div.content {
+	padding-top: 230px;
+}
+
+img.profilepic {
+	width: auto; /*120px */
+	height: 170px;
+	border-radius: 12px;
+	filter: drop-shadow(7px 7px 7px #444444);
+    -webkit-filter: drop-shadow(7px 7px 7px #444444);
+}
+
+img.profilepic2 {
+	display: none;
+	/*width: auto;
+	height: 50px; */
+	/*-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	/*filter: grayscale(100%);*/
+}
+
+div.info {
+	text-align: right;
+	font-size: 11pt;
+	/*margin: 15px 5% 0% 5%;*/
+	min-width: 470px;
+}
+
+
+p.address {
+	text-align: right;
+	color: white;
+}
+
+p.address2 {
+	display: none;
+}
+
+div.info2 {
+	display: none;
+}
+
+div.foto {
+	margin: 20px 5% 0% 5%;
+	float: left;
+}
+
+h1.myname {
+	text-align: right;
+	color: white;
+	background-color: rgba(20, 30, 80, 0.5);
+	padding: 4px;
+	font-weight: normal;
+	font-size: 2em;
+}
+
+
+
+div.socialwidgets{
+	width: 260px;
+	text-align:right;
+}
+
+aside.socialwidgets-aside {
+	float: right;
+	padding:6px;
+	margin:10px 10px 1px 1.5em;
+	background:#e7e7e7;
+	max-width:320px;
+	border-radius: 10px;
+}
+
+aside.ijdl-aside {
+	float: right;
+	/*background: #e8e8e8;*/
+	padding:1px 0 1px 1.5em;
+	margin:0;
+}
+aside.cikm-aside {
+	float: right;
+	/*background: #e8e8e8;*/
+	padding: 1px 0 1px 1.5em;
+	margin: 0;
+}
+twitter-timeline{
+	float: right;
+	padding: 1px 1px 1px 1.5em;
+}
+
+img.leftfloat {
+	float: left;
+	padding: 1px 1.5em 1px 1px;
+}
+
+img.rightfloat {
+	float: right;
+	padding: 1px 1px 1px 1.5em;
+}
+
+/*
+img.ijdl {
+	float: left;
+	padding: 10px 20px 10px;
+	border: none;
+}
+*/
+
+div.footer {
+	padding: 8px;
+	text-align: right;
+	width: 820px;
+	margin: 0px auto;
+}
+
+div.imgbanners {
+	float: right;
+}
+
+img.links {
+	border: none;
+}
+
+td.widget {
+	padding-right: 30px;
+}
+
+td.bibtexitem {
+	background: #e0e0e0;
+}
+
+/* For Fontawesome */
+
+/* Style all font awesome icons */
+
+fab {
+    font-size: 44px;
+    /*
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    */
+}
+
+/* Add a hover effect if you want */
+.fab:hover {
+    opacity: 0.7;
+}

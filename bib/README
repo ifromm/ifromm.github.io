@@ -1,0 +1,3 @@
+./bibtex2html.py MyCollection.bib bib.html --conf papers.ini
+
+Make authors are present in @book
