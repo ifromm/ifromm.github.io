@@ -108,8 +108,14 @@
 					<h1>Publications</h1>
 			
 					<div>
+						<p  id="pubs">Loading...</p>
 						<!-- <script src="https://bibbase.org/show?bib=http://www.frommholz.org/ifromm.bib&jsonp=1&theme=side&owner=frommholz"></script>-->
 						<script src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fzotero-mypublications%2Fifromm&jsonp=1&theme=side&owner=frommholz&showSearch=true&nocache=0"></script>
+						<script>
+							var pubs = document.getElementById("pubs")
+							// pubs.textContent = ""
+							pubs.parentNode.removeChild(pubs);
+						</script>
 					</div>
 
 				</div>
