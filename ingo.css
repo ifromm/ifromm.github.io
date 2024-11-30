@@ -56,7 +56,7 @@ p.new{
 	padding: 8px;
 }
 p.new::before {
-	content: 'NEW - \A';
+	/*content: 'NEW - \A'; */
 	font-weight: bold;
 	color: blue;
 }
