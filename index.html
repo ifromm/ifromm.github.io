@@ -3,8 +3,6 @@
 	xmlns:fb="https://www.facebook.com/2008/fbml" xml:lang="en" lang="en">
 
 <head>
-
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<!--  Font Awesome -->
@@ -68,41 +66,36 @@
 	]
 	}
 	</script>
+	<!-- Mastodon embed timeline widget  https://gitlab.com/idotj/mastodon-embed-timeline -->
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+	<link href="mastodon-embed-timeline/mastodon-timeline.min.css" rel="stylesheet" />
 
 </head>
 
 <body about="https://www.frommholz.org/" onscroll="fixedBanner()">
+
+
+	<!-- BANNER -->
+	<!-- Edit banner.html for any changes. -->
 	<div class="banner" id="banner">
-		<div class="content">
-			<p>
-				<center>
-					<a class="menu" href="index.html#about" )"><b>About Me</b></a> &#8226;&nbsp;
-					<a href="index.html#research" class="menu"><b>Research</b></a> &#8226;&nbsp;
-					<a href="index.html#projects" class="menu"><b>Projects</b></a> &#8226;&nbsp;
-					<a href="index.html#supervision" class="menu"><b>Supervision</b></a> &#8226;&nbsp;
-					<a href="index.html#teaching" class="menu"><b>Teaching</b></a> &#8226;&nbsp;<a
-						href="index.html#related" class="menu"><b>Activities</b></a> &#8226;&nbsp;
-					<a href="index.html#cv" class="menu"><b>CV</b></a> &#8226;&nbsp;
-					<a href="index.html#trivia" class="menu"><b>Trivia</b></a> &#8226;&nbsp;<a href="publications.html"
-						class="menu"><b>Publications</b></a>
-				</center>
-			</p>
+		<script>
+			fetch('banner.html')
+				.then(response => response.text())
+				.then(data => {
+					document.getElementById('banner').innerHTML = data;
+					console.log("Loaded data: " + data)
+					// Access the elements after they are added to the DOM
+					address = document.getElementById("address");
+					profilepic = document.getElementById("profilepic");
+					bannerLoaded = true;
 
-			<div class="foto">
-				<img class="profilepic" id="profilepic" src="ingo.png" alt="Ingo Frommholz" />
-			</div>
-			<div class="info" id="info">
-				<h1 class="myname">Dr. Ingo Frommholz</h1>
-				<p class="address" id="address">
-					<strong>PhD, Dipl.-Inform., FBCS, FHEA<br />Reader (~Associate Professor) in Data Science
-						<br />University of Wolverhampton, UK</strong>
-				</p>
-			</div>
-
-		</div>
+					// Verify they are not null
+					//console.log("Address element:", address);
+					//console.log("Profile pic element:", profilepic);
+				})
+				.catch(error => console.error("Error loading banner:", error));
+		</script>
 	</div>
-
-	<br />
 
 	<div class="main">
 
@@ -129,20 +122,6 @@
 					SCOLIA will take place along <a href="https://ecir2025.eu/workshops/">ECIR 2025</a>. We are calling
 					for papers,
 					please see our <a href="https://sites.google.com/view/bir-ws/scolia-2025">homepage</a> for details!
-				</p>
-				<p class="new">
-					<a href="https://medium.com/bcs-irsg-informer/search-solutions-2024-registration-open-74733c7bd242">BCS
-						Search Solutions</a>, our annual conference to bring together academia and industry, took place
-					November 26+27. November 26 saw two tutorials on Technology Assisted Review and on
-					Retrieval-Augmented Generation, respectively. At the main conference (November 27), several leading
-					practitioners and researchers gave talks about search-related topics.
-				</p>
-				<p class="new">
-					It was a great pleasure to give a talk about our research in Information Retrieval, Generative AI
-					and
-					Retrieval-Augmented Generation at the <a
-						href="https://www.linkedin.com/posts/bcswlv_stemday-innovation-learning-ugcPost-7257436458418860033-AFsk?utm_source=share&utm_medium=member_desktop">STEM
-						day of the BCS Wolverhampton Student Chapter</a>.
 				</p>
 
 			</div>
@@ -184,14 +163,42 @@
 						<a href="https://twitter.com/iFromm" class="fab fa-twitter"></a>
 					</p>
 				</div>
+				<!-- Bluesky
 				<div><small>
 						<script src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
 						<bsky-embed username="ifromm.bsky.social" mode="" limit="3">
 						</bsky-embed>
 					</small>
-
+				</div> -->
+				<!-- Mastodon -->
+				<div id="mt-container" class="mt-container">
+					<div class="mt-body" role="feed" style="font-size: small;">
+						<div class="mt-loading-spinner"></div>
+					</div>
 				</div>
+				<!-- Mastodon embed timeline widget  https://gitlab.com/idotj/mastodon-embed-timeline -->
+				<script src="mastodon-embed-timeline/mastodon-timeline.umd.js"></script>
+				<script>
+					// see https://gitlab.com/idotj/mastodon-embed-timeline
+					const myTimeline = new MastodonTimeline.Init({
+						instanceUrl: "https://idf.social",
+						timelineType: "profile",
+						userId: "2565",
+						profileName: "@ingo",
+						defaultTheme: "auto",
+						// Maximum number of posts to request to the server
+						// Default: "20"
+						maxNbPostFetch: "3",
 
+						// Maximum number of posts to show in the timeline
+						// Default: "20"
+						maxNbPostShow: "3",
+
+						// Hide pinned posts from the profile timeline
+						// Default: false (don't hide)
+						hidePinnedPosts: true
+					});
+				</script>
 
 			</aside>
 
@@ -219,7 +226,8 @@
 						href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence">generative AI</a> and
 					its application in disciplines such as
 					<a href="https://en.wikipedia.org/wiki/Digital_library">Digital Libraries</a>. I was general chair
-					of <a href="https:cikm2023.org/">ACM CIKM 2023</a>. I am chair of the <a href="https:irsg.bcs.org/">BCS Information Retrieval Specialist Group (BCS-IRSG)</a>.
+					of <a href="https:cikm2023.org/">ACM CIKM 2023</a>. I am chair of the <a
+						href="https:irsg.bcs.org/">BCS Information Retrieval Specialist Group (BCS-IRSG)</a>.
 				<ul>
 					<li>My <a href="https://researchers.wlv.ac.uk/I.Frommholz">University of Wolverhampton researcher
 							page</a></li>
@@ -254,7 +262,7 @@
 						Fellow</a> as well as a <a
 						href="https://www.heacademy.ac.uk/individuals/fellowship/fellow">Fellow of the Higher Education
 						Academy</a>.
-
+				</p>
 				<p><a href="https://www.ominoproject.eu"><img alt="OMINO" src="Omino.jpg" class="rightfloat"
 							width="120px" /></a>I am the University of Wolverhampton's Principle Investigator of the EU
 					Horizon Europe Marie

@@ -81,8 +81,9 @@ div.main {
 
 div.banner {
 	margin: 0px auto;
-	position: -webkit-sticky;
-	position: sticky;
+	/* position: -webkit-sticky; */
+	position: sticky; 
+	z-index: 20;
 	top: 0;
 	width: 100%;
 	min-width: 470px;
@@ -96,6 +97,7 @@ div.banner {
 	background-blend-mode: overlay;*/
 	height: 200px;
 	/* offsetTop:500; */
+			
 }
 
 div.news {
