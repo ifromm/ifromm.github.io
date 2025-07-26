@@ -6,6 +6,11 @@ body {
 	margin: 50px 0px;
 	padding: 0px;
 	text-align: center;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	white-space: normal;
+	word-spacing: normal;
 }
 
 /* Mobile-first responsive design */
@@ -36,6 +41,28 @@ a.menu {
 	transition: background-color 0.3s;
 }
 
+/* General link styling to prevent spacing issues */
+a {
+	word-spacing: normal;
+	letter-spacing: normal;
+	white-space: normal;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* Fix double spaces around links */
+p a {
+	white-space: normal;
+	word-spacing: normal;
+}
+
+/* Remove any automatic spacing around links */
+a:before,
+a:after {
+	content: none;
+	white-space: normal;
+}
+
 a.menu:hover {
 	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 4px;
@@ -47,6 +74,145 @@ a.menu:hover {
 	margin: 10px 0;
 }
 
+/* Hamburger menu styles */
+.hamburger {
+	display: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	margin: 0 0 0 10px;
+	z-index: 100;
+}
+.hamburger span {
+	display: block;
+	width: 28px;
+	height: 4px;
+	margin: 5px 0;
+	background: #fff;
+	border-radius: 2px;
+	transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+	.hamburger {
+		display: inline-block;
+		position: absolute;
+		top: 18px;
+		right: 18px;
+	}
+	
+	.nav-menu {
+		display: none;
+		flex-direction: column;
+		background: rgba(80, 113, 192, 0.98);
+		position: absolute;
+		top: 60px;
+		right: 10px;
+		left: 10px;
+		padding: 20px 0 10px 0;
+		border-radius: 10px;
+		box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+		z-index: 99;
+		text-align: left;
+	}
+	.nav-menu.open {
+		display: flex;
+	}
+	.nav-menu .menu {
+		display: block;
+		margin: 5px 20px;
+		font-size: 1.1em;
+		border-radius: 4px;
+		background: none;
+		color: #fff;
+		padding: 8px 0;
+		border: none;
+		box-shadow: none;
+		transition: background 0.2s;
+		line-height: 1.2;
+		word-spacing: normal;
+		letter-spacing: normal;
+	}
+	.nav-menu .menu:hover {
+		background: rgba(255,255,255,0.12);
+	}
+	
+	/* Hide the separators on mobile */
+	.nav-menu .menu + .menu:before {
+		display: none;
+	}
+}
+
+/* Desktop nav stays horizontal */
+@media (min-width: 901px) {
+	.hamburger {
+		display: none;
+	}
+	.nav-menu {
+		display: block !important;
+		position: static;
+		background: none;
+		box-shadow: none;
+		padding: 0;
+		border-radius: 0;
+		text-align: center;
+		line-height: 1.2;
+	}
+	.nav-menu .menu {
+		display: inline-block;
+		margin: 0 2px;
+		color: #fff;
+		font-size: 0.9em;
+		padding: 6px 8px;
+		border-radius: 4px;
+		transition: background 0.2s;
+		line-height: 1.2;
+		word-spacing: normal;
+		letter-spacing: normal;
+		white-space: nowrap;
+	}
+	.nav-menu .menu:hover {
+		background: rgba(255,255,255,0.18);
+	}
+}
+
+/* Ensure nav is above other content */
+.banner {
+	position: relative;
+	z-index: 10;
+}
+
+/* Fix for medium-sized windows where menu might wrap */
+@media (min-width: 768px) and (max-width: 1200px) {
+	.nav-menu {
+		line-height: 1.2;
+	}
+	.nav-menu .menu {
+		font-size: 0.85em;
+		padding: 4px 6px;
+		margin: 0 1px;
+		line-height: 1.2;
+		word-spacing: normal;
+		letter-spacing: normal;
+		white-space: nowrap;
+	}
+	
+	/* Fix social media icons overflow */
+	aside.socialwidgets-aside {
+		max-width: 320px;
+	}
+	
+	div.socialwidgets p[align="center"] {
+		gap: 6px;
+	}
+	
+	div.socialwidgets p[align="center"] a {
+		font-size: 16px;
+		padding: 5px;
+	}
+}
+
 /* Mobile navigation */
 @media (max-width: 768px) {
 	.nav-menu {
@@ -56,9 +222,12 @@ a.menu:hover {
 	
 	.menu {
 		display: block;
-		margin: 5px 0;
-		padding: 10px;
+		margin: 2px 0;
+		padding: 8px 10px;
 		border-radius: 4px;
+		line-height: 1.2;
+		word-spacing: normal;
+		letter-spacing: normal;
 	}
 	
 	/* Hide center tag on mobile */
@@ -106,6 +275,36 @@ h2.heading {
 
 p {
 	text-align: justify;
+	word-spacing: normal;
+	letter-spacing: normal;
+	white-space: normal;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
+/* Ensure proper text flow in paragraphs with links */
+p a {
+	display: inline;
+	word-break: break-word;
+	hyphens: auto;
+	white-space: normal;
+	word-spacing: normal;
+}
+
+/* Fix specific double space issues around links */
+p {
+	white-space: normal;
+	word-spacing: normal;
+}
+
+/* Normalize text content to collapse multiple spaces */
+p, div, span, li {
+	white-space: normal;
+	word-spacing: normal;
+	text-rendering: optimizeLegibility;
 }
 
 @media (max-width: 768px) {
@@ -328,12 +527,16 @@ h1.myname {
 div.socialwidgets{
 	width: 320px;
 	text-align:right;
+	max-width: 100%;
+	overflow: hidden;
 }
 
 @media (max-width: 768px) {
 	div.socialwidgets {
 		width: 100%;
 		text-align: center;
+		max-width: 100%;
+		overflow: hidden;
 	}
 }
 
@@ -447,19 +650,87 @@ img.rightfloat {
 		line-height: 1.6;
 	}
 	
+	/* Fix text spacing issues on mobile */
+	p, div, span, li {
+		word-spacing: normal;
+		letter-spacing: normal;
+		white-space: normal;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		line-height: 1.4;
+	}
+	
+	/* Remove extra spaces and normalize text */
+	p {
+		text-align: left;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		line-height: 1.4;
+		margin-bottom: 0.8em;
+	}
+	
+	/* Fix link spacing issues */
+	a {
+		word-spacing: normal;
+		letter-spacing: normal;
+		white-space: normal;
+		text-decoration: none;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		line-height: inherit;
+	}
+	
+	/* Prevent double spaces in link text */
+	a:before,
+	a:after {
+		content: none;
+	}
+	
+	/* Ensure links don't create extra spacing */
+	p a {
+		display: inline;
+		word-break: break-word;
+		line-height: inherit;
+	}
+	
+	/* Collapse multiple spaces and normalize whitespace */
+	p, div, span, li, a {
+		white-space: normal;
+		word-spacing: normal;
+	}
+	
+	/* Force collapse of multiple spaces */
+	* {
+		white-space-collapse: collapse;
+	}
+	
+	/* Fix banner menu spacing */
+	.nav-menu {
+		line-height: 1.2;
+	}
+	
+	.nav-menu .menu {
+		line-height: 1.2;
+		margin: 2px 0;
+		padding: 8px 10px;
+	}
+	
 	/* Better social icons layout */
 	div.socialwidgets p[align="center"] {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 10px;
+		gap: 8px;
+		max-width: 100%;
 	}
 	
 	div.socialwidgets p[align="center"] a {
-		font-size: 20px;
-		padding: 8px;
+		font-size: 18px;
+		padding: 6px;
 		border-radius: 4px;
 		transition: background-color 0.3s;
+		flex-shrink: 0;
 	}
 	
 	div.socialwidgets p[align="center"] a:hover {

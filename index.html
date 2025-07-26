@@ -44,6 +44,23 @@
 
 	<script type="text/javascript" src="blankwin.js"></script>
 	<script type="text/javascript" src="banner.js"></script>
+	
+	<script>
+		// Hamburger menu functionality
+		function initHamburgerMenu() {
+			var hamburger = document.getElementById('hamburger-menu');
+			var navMenu = document.getElementById('nav-menu');
+			
+			if (hamburger && navMenu) {
+				hamburger.addEventListener('click', function() {
+					var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+					hamburger.setAttribute('aria-expanded', !expanded);
+					navMenu.classList.toggle('open');
+					console.log('Hamburger clicked, menu toggled');
+				});
+			}
+		}
+	</script>
 
 
 	<script type="application/ld+json">
@@ -89,6 +106,9 @@
 					address = document.getElementById("address");
 					profilepic = document.getElementById("profilepic");
 					bannerLoaded = true;
+
+					// Initialize hamburger menu after banner is loaded
+					initHamburgerMenu();
 
 					// Verify they are not null
 					//console.log("Address element:", address);
