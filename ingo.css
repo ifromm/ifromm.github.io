@@ -7,6 +7,15 @@ body {
 	padding: 0px;
 	text-align: center;
 }
+
+/* Mobile-first responsive design */
+@media (max-width: 768px) {
+	body {
+		margin: 20px 0px;
+		font-size: 16px;
+	}
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     /*background-color: #303030;*/
@@ -21,6 +30,41 @@ body {
 
 a.menu {
 	color: white;
+	text-decoration: none;
+	padding: 8px 12px;
+	display: inline-block;
+	transition: background-color 0.3s;
+}
+
+a.menu:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	border-radius: 4px;
+}
+
+/* Navigation menu styling */
+.nav-menu {
+	text-align: center;
+	margin: 10px 0;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+	.nav-menu {
+		text-align: left;
+		margin: 15px 0;
+	}
+	
+	.menu {
+		display: block;
+		margin: 5px 0;
+		padding: 10px;
+		border-radius: 4px;
+	}
+	
+	/* Hide center tag on mobile */
+	center {
+		text-align: left;
+	}
 }
 
 h1.heading {
@@ -36,6 +80,15 @@ h1.heading {
 	margin-top:1.3em;
 }
 
+@media (max-width: 768px) {
+	h1.heading {
+		width: 100%;
+		min-width: auto;
+		font-size: 140%;
+		margin-top: 1em;
+	}
+}
+
 h2.heading {
 	/*color: white;
 	background-color: #5070c0;*/
@@ -45,8 +98,20 @@ h2.heading {
 	padding: 4px;
 }
 
+@media (max-width: 768px) {
+	h2.heading {
+		font-size: 110%;
+	}
+}
+
 p {
 	text-align: justify;
+}
+
+@media (max-width: 768px) {
+	p {
+		text-align: left;
+	}
 }
 
 p.new{
@@ -61,6 +126,12 @@ p.new::before {
 	color: blue;
 }
 
+@media (max-width: 768px) {
+	p.new {
+		padding: 12px;
+		margin: 10px 0;
+	}
+}
 
 ul li img {
     margin-left: 10px;
@@ -78,6 +149,13 @@ div.main {
 	color: #707070;
 }
 
+@media (max-width: 768px) {
+	div.main {
+		width: 95%;
+		min-width: auto;
+		padding-top: 10px;
+	}
+}
 
 div.banner {
 	margin: 0px auto;
@@ -97,7 +175,14 @@ div.banner {
 	background-blend-mode: overlay;*/
 	height: 200px;
 	/* offsetTop:500; */
-			
+}
+
+@media (max-width: 768px) {
+	div.banner {
+		min-width: auto;
+		height: auto;
+		min-height: 150px;
+	}
 }
 
 div.news {
@@ -133,8 +218,21 @@ div.content {
 	margin: 0px auto;
 }
 
+@media (max-width: 768px) {
+	div.content {
+		max-width: 100%;
+		padding: 0 10px;
+	}
+}
+
 div.sticky+div.content {
 	padding-top: 230px;
+}
+
+@media (max-width: 768px) {
+	div.sticky+div.content {
+		padding-top: 180px;
+	}
 }
 
 img.profilepic {
@@ -143,6 +241,14 @@ img.profilepic {
 	border-radius: 12px;
 	filter: drop-shadow(7px 7px 7px #444444);
     -webkit-filter: drop-shadow(7px 7px 7px #444444);
+}
+
+@media (max-width: 768px) {
+	img.profilepic {
+		height: 120px;
+		width: auto;
+		max-width: 100%;
+	}
 }
 
 img.profilepic2 {
@@ -160,10 +266,24 @@ div.info {
 	min-width: 470px;
 }
 
+@media (max-width: 768px) {
+	div.info {
+		text-align: center;
+		min-width: auto;
+		font-size: 10pt;
+		margin: 10px 0;
+	}
+}
 
 p.address {
 	text-align: right;
 	color: white;
+}
+
+@media (max-width: 768px) {
+	p.address {
+		text-align: center;
+	}
 }
 
 p.address2 {
@@ -179,6 +299,14 @@ div.foto {
 	float: left;
 }
 
+@media (max-width: 768px) {
+	div.foto {
+		float: none;
+		text-align: center;
+		margin: 10px 0;
+	}
+}
+
 h1.myname {
 	text-align: right;
 	color: white;
@@ -188,11 +316,25 @@ h1.myname {
 	font-size: 2em;
 }
 
-
+@media (max-width: 768px) {
+	h1.myname {
+		text-align: center;
+		font-size: 1.5em;
+		padding: 8px;
+		margin: 10px 0;
+	}
+}
 
 div.socialwidgets{
 	width: 320px;
 	text-align:right;
+}
+
+@media (max-width: 768px) {
+	div.socialwidgets {
+		width: 100%;
+		text-align: center;
+	}
 }
 
 aside.socialwidgets-aside {
@@ -204,31 +346,169 @@ aside.socialwidgets-aside {
 	border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+	aside.socialwidgets-aside {
+		float: none;
+		margin: 20px 0;
+		max-width: 100%;
+		padding: 15px;
+	}
+}
+
 aside.ijdl-aside {
 	float: right;
 	/*background: #e8e8e8;*/
 	padding:1px 0 1px 1.5em;
 	margin:0;
 }
+
+@media (max-width: 768px) {
+	aside.ijdl-aside {
+		float: none;
+		padding: 10px 0;
+		margin: 10px 0;
+	}
+}
+
 aside.cikm-aside {
 	float: right;
 	/*background: #e8e8e8;*/
 	padding: 1px 0 1px 1.5em;
 	margin: 0;
 }
+
+@media (max-width: 768px) {
+	aside.cikm-aside {
+		float: none;
+		padding: 10px 0;
+		margin: 10px 0;
+	}
+}
+
 twitter-timeline{
 	float: right;
 	padding: 1px 1px 1px 1.5em;
 }
 
+@media (max-width: 768px) {
+	twitter-timeline {
+		float: none;
+		padding: 10px 0;
+	}
+}
+
 img.leftfloat {
 	float: left;
-	padding: 1px 1.5em 1px 1px;
+	margin: 0px 15px 15px 0px;
+	max-width: 250px;
+}
+
+@media (max-width: 768px) {
+	img.leftfloat {
+		float: none;
+		display: block;
+		margin: 15px auto;
+		max-width: 100%;
+		height: auto;
+	}
 }
 
 img.rightfloat {
 	float: right;
-	padding: 1px 1px 1px 1.5em;
+	margin: 0px 0px 15px 15px;
+	max-width: 250px;
+}
+
+@media (max-width: 768px) {
+	img.rightfloat {
+		float: none;
+		display: block;
+		margin: 15px auto;
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+	/* Improve touch targets */
+	a {
+		min-height: 44px;
+		line-height: 44px;
+	}
+	
+	/* Better spacing for mobile */
+	div.news, div.sections {
+		margin-bottom: 20px;
+	}
+	
+	/* Improve readability */
+	div.main {
+		line-height: 1.6;
+	}
+	
+	/* Better social icons layout */
+	div.socialwidgets p[align="center"] {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+	}
+	
+	div.socialwidgets p[align="center"] a {
+		font-size: 20px;
+		padding: 8px;
+		border-radius: 4px;
+		transition: background-color 0.3s;
+	}
+	
+	div.socialwidgets p[align="center"] a:hover {
+		background-color: rgba(80, 113, 192, 0.1);
+	}
+	
+	/* Improve iframe responsiveness */
+	iframe {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Better table layout on mobile */
+	table {
+		width: 100%;
+		font-size: 14px;
+	}
+	
+	/* Improve list readability */
+	ul, ol {
+		padding-left: 20px;
+	}
+	
+	/* Better image handling */
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Improve form elements */
+	input, textarea, select {
+		font-size: 16px; /* Prevents zoom on iOS */
+		max-width: 100%;
+	}
+}
+
+/* Tablet improvements */
+@media (min-width: 769px) and (max-width: 1024px) {
+	div.main {
+		width: 95%;
+	}
+	
+	aside.socialwidgets-aside {
+		max-width: 300px;
+	}
+	
+	img.profilepic {
+		height: 140px;
+	}
 }
 
 /*
