@@ -94,12 +94,28 @@ a.menu:hover {
 	transition: 0.3s;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
 	.hamburger {
 		display: inline-block;
 		position: absolute;
 		top: 18px;
 		right: 18px;
+		z-index: 1001;
+	}
+	
+	/* Add padding to banner content to prevent hamburger overlap */
+	div.content {
+		padding-right: 60px;
+	}
+	
+	/* Ensure proper banner sizing when hamburger menu is active */
+	div.banner {
+		height: 160px;
+		min-height: 120px;
+	}
+	
+	div.banner.sticky {
+		height: 60px !important;
 	}
 	
 	.nav-menu {
@@ -211,23 +227,53 @@ a.menu:hover {
 		font-size: 16px;
 		padding: 5px;
 	}
+	
 }
 
 /* Mobile navigation */
 @media (max-width: 768px) {
 	.nav-menu {
+		display: none;
+		flex-direction: column;
+		background: rgba(80, 113, 192, 0.98);
+		position: absolute;
+		top: 60px;
+		right: 10px;
+		left: 10px;
+		padding: 20px 0 10px 0;
+		border-radius: 10px;
+		box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+		z-index: 99;
 		text-align: left;
-		margin: 15px 0;
 	}
 	
-	.menu {
+	.nav-menu.open {
+		display: flex;
+	}
+	
+	.nav-menu .menu {
 		display: block;
-		margin: 2px 0;
-		padding: 8px 10px;
+		margin: 5px 20px;
+		font-size: 1.1em;
 		border-radius: 4px;
+		background: none;
+		color: #fff;
+		padding: 8px 0;
+		border: none;
+		box-shadow: none;
+		transition: background 0.2s;
 		line-height: 1.2;
 		word-spacing: normal;
 		letter-spacing: normal;
+	}
+	
+	.nav-menu .menu:hover {
+		background: rgba(255,255,255,0.12);
+	}
+	
+	/* Hide the separators on mobile */
+	.nav-menu .menu + .menu:before {
+		display: none;
 	}
 	
 	/* Hide center tag on mobile */
@@ -379,10 +425,52 @@ div.banner {
 @media (max-width: 768px) {
 	div.banner {
 		min-width: auto;
-		height: auto;
-		min-height: 150px;
+		height: 160px;
+		min-height: 120px;
+	}
+	
+	/* Ensure JavaScript can still control banner height on mobile */
+	div.banner.sticky {
+		height: 60px !important;
+	}
+	
+	/* Adjust content padding for smaller screens */
+	div.sticky+div.content {
+		padding-top: 180px;
+	}
+	
+	/* Ensure hamburger menu works properly on small screens */
+	.hamburger {
+		display: inline-block !important;
+		position: absolute;
+		top: 18px;
+		right: 18px;
+		z-index: 1001;
+	}
+	
+	/* Add padding to banner content to prevent hamburger overlap */
+	div.content {
+		padding-right: 60px;
 	}
 }
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+	div.banner {
+		height: 140px;
+		min-height: 100px;
+	}
+	
+	div.banner.sticky {
+		height: 50px !important;
+	}
+	
+	div.sticky+div.content {
+		padding-top: 160px;
+	}
+}
+
+
 
 div.news {
 		padding:16px;
@@ -406,6 +494,12 @@ div.sticky {
 	/*background: rgba(80, 113, 192, 0.0);*/
 }
 
+@media (max-width: 768px) {
+	div.sticky {
+		height: 60px;
+	}
+}
+
 div.container{
 	display: inline-block;
 }
@@ -421,6 +515,8 @@ div.content {
 	div.content {
 		max-width: 100%;
 		padding: 0 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 
@@ -450,6 +546,14 @@ img.profilepic {
 	}
 }
 
+@media (max-width: 480px) {
+	img.profilepic {
+		height: 100px;
+		width: auto;
+		max-width: 100%;
+	}
+}
+
 img.profilepic2 {
 	display: none;
 	/*width: auto;
@@ -467,10 +571,11 @@ div.info {
 
 @media (max-width: 768px) {
 	div.info {
-		text-align: center;
+		text-align: left;
 		min-width: auto;
 		font-size: 10pt;
 		margin: 10px 0;
+		padding-left: 10px;
 	}
 }
 
@@ -481,7 +586,13 @@ p.address {
 
 @media (max-width: 768px) {
 	p.address {
-		text-align: center;
+		text-align: left;
+	}
+}
+
+@media (max-width: 480px) {
+	p.address {
+		font-size: 0.8em;
 	}
 }
 
@@ -500,9 +611,9 @@ div.foto {
 
 @media (max-width: 768px) {
 	div.foto {
-		float: none;
-		text-align: center;
-		margin: 10px 0;
+		float: left;
+		text-align: left;
+		margin: 10px 5% 0% 5%;
 	}
 }
 
@@ -517,10 +628,18 @@ h1.myname {
 
 @media (max-width: 768px) {
 	h1.myname {
-		text-align: center;
+		text-align: left;
 		font-size: 1.5em;
 		padding: 8px;
 		margin: 10px 0;
+	}
+}
+
+@media (max-width: 480px) {
+	h1.myname {
+		font-size: 1.2em;
+		padding: 6px;
+		margin: 8px 0;
 	}
 }
 
