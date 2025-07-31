@@ -160,6 +160,12 @@ a.menu:hover {
 	}
 }
 
+@media (max-width: 768px) {
+    .nav-menu .sep {
+        display: none;
+    }
+}
+
 /* Desktop nav stays horizontal */
 @media (min-width: 901px) {
 	.hamburger {
