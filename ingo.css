@@ -426,12 +426,12 @@ div.banner {
 	div.banner {
 		min-width: auto;
 		height: 160px;
-		min-height: 120px;
+		min-height: 20px;
 	}
 	
 	/* Ensure JavaScript can still control banner height on mobile */
 	div.banner.sticky {
-		height: 60px !important;
+		height: 20px !important;  /* 60px */
 	}
 	
 	/* Adjust content padding for smaller screens */

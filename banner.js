@@ -16,7 +16,7 @@ function fixedBanner() {
 			if (document.getElementById("banner").contains(profilepic)) {
 				profilepic.remove();
 			}
-			document.getElementById("banner").style.height = 100
+			document.getElementById("banner").style.height = 30
 			document.getElementById("banner").classList.add("sticky")
 			//document.getElementById("profilepic").classList.add("profilepic2")
 			//document.getElementById("address").classList.add("address2")
@@ -33,7 +33,7 @@ function fixedBanner() {
 			//document.getElementById("profilepic").classList.remove("profilepic2")
 			//document.getElementById("address").classList.remove("address2")
 			document.getElementById("banner").classList.remove("sticky")
-			document.getElementById("banner").style.height = 200
+			document.getElementById("banner").style.height = 60
 			sticky = 510
 		}
 	}
