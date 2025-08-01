@@ -14,7 +14,7 @@ body {
 }
 
 /* Mobile-first responsive design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	body {
 		margin: 20px 0px;
 		font-size: 16px;
@@ -94,11 +94,11 @@ a.menu:hover {
 	transition: 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	.hamburger {
-		display: inline-block;
+		display: inline-block !important;
 		position: absolute;
-		top: 18px;
+		top: -12px;
 		right: 18px;
 		z-index: 1001;
 	}
@@ -160,7 +160,7 @@ a.menu:hover {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .nav-menu .sep {
         display: none;
     }
@@ -206,7 +206,7 @@ a.menu:hover {
 }
 
 /* Fix for medium-sized windows where menu might wrap */
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 900px) and (max-width: 1200px) {
 	.nav-menu {
 		line-height: 1.2;
 	}
@@ -237,7 +237,7 @@ a.menu:hover {
 }
 
 /* Mobile navigation */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	.nav-menu {
 		display: none;
 		flex-direction: column;
@@ -301,7 +301,7 @@ h1.heading {
 	margin-top:1.3em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	h1.heading {
 		width: 100%;
 		min-width: auto;
@@ -319,7 +319,7 @@ h2.heading {
 	padding: 4px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	h2.heading {
 		font-size: 110%;
 	}
@@ -359,7 +359,7 @@ p, div, span, li {
 	text-rendering: optimizeLegibility;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	p {
 		text-align: left;
 	}
@@ -377,7 +377,7 @@ p.new::before {
 	color: blue;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	p.new {
 		padding: 12px;
 		margin: 10px 0;
@@ -400,7 +400,7 @@ div.main {
 	color: #707070;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.main {
 		width: 95%;
 		min-width: auto;
@@ -428,7 +428,7 @@ div.banner {
 	/* offsetTop:500; */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.banner {
 		min-width: auto;
 		height: 160px;
@@ -449,7 +449,7 @@ div.banner {
 	.hamburger {
 		display: inline-block !important;
 		position: absolute;
-		top: 18px;
+		top: 12px;
 		right: 18px;
 		z-index: 1001;
 	}
@@ -501,7 +501,7 @@ div.sticky {
 	/*background: rgba(80, 113, 192, 0.0);*/
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.sticky {
 		height: 60px;
 	}
@@ -518,7 +518,7 @@ div.content {
 	margin: 0px auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.content {
 		max-width: 100%;
 		padding: 0 10px;
@@ -531,7 +531,7 @@ div.sticky+div.content {
 	padding-top: 230px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.sticky+div.content {
 		padding-top: 180px;
 	}
@@ -545,7 +545,7 @@ img.profilepic {
     -webkit-filter: drop-shadow(7px 7px 7px #444444);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	img.profilepic {
 		height: 120px;
 		width: auto;
@@ -576,7 +576,7 @@ div.info {
 	min-width: 470px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.info {
 		text-align: left;
 		min-width: auto;
@@ -591,7 +591,7 @@ p.address {
 	color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	p.address {
 		text-align: left;
 	}
@@ -616,7 +616,7 @@ div.foto {
 	float: left;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.foto {
 		float: left;
 		text-align: left;
@@ -633,7 +633,7 @@ h1.myname {
 	font-size: 2em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	h1.myname {
 		text-align: left;
 		font-size: 1.5em;
@@ -657,7 +657,7 @@ div.socialwidgets{
 	overflow: hidden;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	div.socialwidgets {
 		width: 100%;
 		text-align: center;
@@ -675,7 +675,7 @@ aside.socialwidgets-aside {
 	border-radius: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	aside.socialwidgets-aside {
 		float: none;
 		margin: 20px 0;
@@ -691,7 +691,7 @@ aside.ijdl-aside {
 	margin:0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	aside.ijdl-aside {
 		float: none;
 		padding: 10px 0;
@@ -706,7 +706,7 @@ aside.cikm-aside {
 	margin: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	aside.cikm-aside {
 		float: none;
 		padding: 10px 0;
@@ -719,7 +719,7 @@ twitter-timeline{
 	padding: 1px 1px 1px 1.5em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	twitter-timeline {
 		float: none;
 		padding: 10px 0;
@@ -732,7 +732,7 @@ img.leftfloat {
 	max-width: 250px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	img.leftfloat {
 		float: none;
 		display: block;
@@ -748,7 +748,7 @@ img.rightfloat {
 	max-width: 250px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	img.rightfloat {
 		float: none;
 		display: block;
@@ -759,7 +759,7 @@ img.rightfloat {
 }
 
 /* Mobile-specific improvements */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 	/* Improve touch targets */
 	a {
 		min-height: 44px;
