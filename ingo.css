@@ -463,12 +463,13 @@ div.banner {
 /* Extra small screens (phones) */
 @media (max-width: 480px) {
 	div.banner {
+		min-width: auto;
 		height: 140px;
 		min-height: 20px;
 	}
 	
 	div.banner.sticky {
-		height: 50px !important;
+		height: 20px !important;
 	}
 	
 	div.sticky+div.content {
