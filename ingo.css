@@ -111,7 +111,7 @@ a.menu:hover {
 	/* Ensure proper banner sizing when hamburger menu is active */
 	div.banner {
 		height: 160px;
-		min-height: 120px;
+		min-height: 20px;
 	}
 	
 	div.banner.sticky {
