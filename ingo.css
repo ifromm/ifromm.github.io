@@ -597,11 +597,13 @@ p.address {
 	}
 }
 
+/*
 @media (max-width: 480px) {
 	p.address {
 		font-size: 0.8em;
 	}
 }
+*/
 
 p.address2 {
 	display: none;
