@@ -460,8 +460,14 @@ div.banner {
 	}
 }
 
-/* Extra small screens (phones) 
+/* Extra small screens (phones) */
 @media (max-width: 480px) {
+	/* Ensure hamburger menu works properly on small screens */
+	.hamburger {
+		top: 10px;
+	}
+
+	/*
 	div.banner {
 		min-width: auto;
 		height: 140px;
@@ -475,7 +481,8 @@ div.banner {
 	div.sticky+div.content {
 		padding-top: 160px;
 	}
-}*/
+*/
+}
 
 
 
