@@ -62,6 +62,9 @@
 		}
 	</script>
 
+	<!--<bsky-embed> -->
+	<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+
 
 	<script type="application/ld+json">
 	{
@@ -137,6 +140,7 @@
 			<br /> <br />
 
 			<aside class="socialwidgets-aside">
+				<h1 class="heading">Media</h1>
 				<div class="socialwidgets">
 					<br />
 					<p align="right" style="font-size: 0.8em;">
@@ -173,22 +177,6 @@
 				</div>
 				<!-- Bluesky -->
 				<div><small>
-						<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
-						<style>
-							/* Optional: style the section and heading however you like */
-							.bluesky-section {
-								margin: 2rem 0;
-								padding: 1rem;
-								border: 1px solid #ddd;
-								border-radius: 0.5rem;
-								background: #fafafa;
-							}
-						
-							.bluesky-section h2 {
-								margin-top: 0;
-								font-size: 1.25rem;
-							}
-						</style>
 						<h4 id="bluesky-heading">Latest from <a href="https://bsky.app/profile/frommholz.org">my Bluesky</a></h4>
 						<bsky-embed username="frommholz.org" mode="feed" limit="3" custom-styles="
       						/* shrink overall font on the host */
