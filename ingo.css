@@ -203,6 +203,9 @@ a.menu:hover {
 .banner {
 	position: relative;
 	z-index: 10;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* Fix for medium-sized windows where menu might wrap */
