@@ -223,6 +223,7 @@ a.menu:hover {
 	/* Fix social media icons overflow */
 	aside.socialwidgets-aside {
 		max-width: 320px;
+		min-width: 320px;
 	}
 	
 	div.socialwidgets p[align="center"] {
@@ -692,6 +693,7 @@ aside.socialwidgets-aside {
 		margin: 20px 0;
 		max-width: 100%;
 		padding: 15px;
+		min-width: 320px;
 	}
 }
 
@@ -911,7 +913,7 @@ img.rightfloat {
 	}
 	
 	aside.socialwidgets-aside {
-		max-width: 300px;
+		max-width: 360px;
 	}
 	
 	img.profilepic {

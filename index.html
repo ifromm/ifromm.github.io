@@ -139,10 +139,10 @@
 			<aside class="socialwidgets-aside">
 				<div class="socialwidgets">
 					<br />
-					<p align="right" style="font-size: 0.9em;">
+					<p align="right" style="font-size: 0.8em;">
 						<span><i class="fa-solid fa-envelope"></i> ingo at frommholz dot org</span>
 					</p>
-					<p align="right" style="font-size: 0.9em;">
+					<p align="right" style="font-size: 0.8em;">
 						<span><i class="fa-solid fa-envelope"></i> ifrommholz at acm dot org</span>
 
 					</p>
@@ -173,9 +173,35 @@
 				</div>
 				<!-- Bluesky -->
 				<div><small>
-						<script src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
-						<bsky-embed username="frommholz.org" mode="" limit="3">
+						<script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+						<style>
+							/* Optional: style the section and heading however you like */
+							.bluesky-section {
+								margin: 2rem 0;
+								padding: 1rem;
+								border: 1px solid #ddd;
+								border-radius: 0.5rem;
+								background: #fafafa;
+							}
+						
+							.bluesky-section h2 {
+								margin-top: 0;
+								font-size: 1.25rem;
+							}
+						</style>
+						<h4 id="bluesky-heading">Latest from <a href="https://bsky.app/profile/frommholz.org">my Bluesky</a></h4>
+						<bsky-embed username="frommholz.org" mode="feed" limit="3" custom-styles="
+      						/* shrink overall font on the host */
+      						:host { font-size: 75% !important; }
+      						/* make sure all text children inherit */
+      				* { font-size: inherit !important; } ">
 						</bsky-embed>
+							<noscript>
+								<p>
+									Enable JavaScript to see my latest Bluesky posts.
+									<a href="https://bsky.app/profile/frommholz.org">View on bsky.app</a>
+								</p>
+							</noscript>
 					</small>
 				</div> 
 				<!-- Mastodon 
@@ -273,8 +299,8 @@
 						href="https://www.heacademy.ac.uk/individuals/fellowship/fellow">Fellow of the Higher Education
 						Academy</a>.
 				</p>
-				<p><a href="https://ominoproject.eu/"><img alt="OMINO" src="Omino-trans.png" class="rightfloat"
-							width="120px" /></a>I am the University of Wolverhampton's Principle Investigator of the EU
+				<p><a href="https://ominoproject.eu/"><img alt="OMINO" src="Omino-trans.png" class="leftfloat"
+							width="120px" /></a>I am the PI of the EU
 					Horizon Europe Marie
 					Sk&#322odowska Curie Staff Exchange project <a href="http://ominoproject.eu/">OMINO</a> (Overcoming
 					Multilevel INformation Overload). In this project, we apply information retrieval,
