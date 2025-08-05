@@ -464,7 +464,7 @@ div.banner {
 @media (max-width: 480px) {
 	/* Ensure hamburger menu works properly on small screens */
 	.hamburger {
-		top: 10px;
+		top: 9px;
 	}
 
 	/*
