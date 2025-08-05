@@ -1,0 +1,29 @@
+name: Update Last Updated Date
+
+on:
+  push:
+    branches:
+      - main  # Change if your default branch is not 'main'
+
+jobs:
+  update-date:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get last commit date
+        id: get_date
+        run: echo "date=$(git log -1 --format=%cd --date=short)" >> $GITHUB_OUTPUT
+
+      - name: Replace placeholder in index.html
+        run: |
+          sed -i "s/<!--LAST_UPDATED-->/$(echo ${{ steps.get_date.outputs.date }})/" index.html
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add index.html
+          git diff --cached --quiet || git commit -m "Update last updated date"
+          git push
+
