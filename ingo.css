@@ -226,13 +226,10 @@ a.menu:hover {
 		min-width: 320px;
 	}
 	
-	div.socialwidgets p[align="center"] {
-		gap: 6px;
-	}
 	
-	div.socialwidgets p[align="center"] a {
-		font-size: 16px;
-		padding: 5px;
+	div p.socialwidgets a {
+		font-size: 20px;
+		padding: 4px;
 	}
 	
 }
@@ -856,7 +853,7 @@ img.rightfloat {
 	}
 	
 	/* Better social icons layout */
-	div.socialwidgets p[align="center"] {
+	div p.socialwidgets {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -864,15 +861,12 @@ img.rightfloat {
 		max-width: 100%;
 	}
 	
-	div.socialwidgets p[align="center"] a {
-		font-size: 18px;
-		padding: 6px;
-		border-radius: 4px;
-		transition: background-color 0.3s;
-		flex-shrink: 0;
+	div p.socialwidgets a {
+		font-size: 22px;
+		padding: 2px;
 	}
 	
-	div.socialwidgets p[align="center"] a:hover {
+	div p.socialwidgets a:hover {
 		background-color: rgba(80, 113, 192, 0.1);
 	}
 	
@@ -913,7 +907,7 @@ img.rightfloat {
 	}
 	
 	aside.socialwidgets-aside {
-		max-width: 360px;
+		 max-width: 360px;
 	}
 	
 	img.profilepic {
