@@ -21,15 +21,20 @@ body {
 	}
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    /*background-color: #303030;*/
-	background-color: #d0d0d0;
-  }
-}
+/* moved dark mode block to end for proper override */
 @media (prefers-color-scheme: light) {
+  html { background-color: #ffffff; }
   body {
     background-color: #f8f8f8;
+    color: inherit;
+  }
+  /* Ensure light mode keeps original look */
+  div.news, div.sections { background: #f1f1f1; color: black; }
+  aside.socialwidgets-aside { background: #e7e7e7; color: inherit; }
+  div.banner { background: rgba(80, 113, 192, 1.0); }
+  img.profilepic {
+    filter: drop-shadow(7px 7px 7px #444444);
+    -webkit-filter: drop-shadow(7px 7px 7px #444444);
   }
 }
 
@@ -220,11 +225,11 @@ a.menu:hover {
 		white-space: nowrap;
 	}
 	
-	/* Fix social media icons overflow */
-	aside.socialwidgets-aside {
-		max-width: 320px;
-		min-width: 320px;
-	}
+    /* Fix social media icons overflow */
+    aside.socialwidgets-aside {
+        max-width: 420px;
+        min-width: 420px;
+    }
 	
 	
 	div p.socialwidgets a {
@@ -550,6 +555,7 @@ img.profilepic {
 	border-radius: 12px;
 	filter: drop-shadow(7px 7px 7px #444444);
     -webkit-filter: drop-shadow(7px 7px 7px #444444);
+    transition: filter 200ms ease, -webkit-filter 200ms ease;
 }
 
 @media (max-width: 900px) {
@@ -680,7 +686,7 @@ aside.socialwidgets-aside {
 	padding:6px;
 	margin:10px 10px 1px 1.5em;
 	background:#e7e7e7;
-	max-width:360px;
+	max-width:460px;
 	border-radius: 10px;
 }
 
@@ -902,13 +908,13 @@ img.rightfloat {
 
 /* Tablet improvements */
 @media (min-width: 900px) and (max-width: 1024px) {
-	div.main {
-		width: 95%;
-	}
-	
-	aside.socialwidgets-aside {
-		 max-width: 360px;
-	}
+    div.main {
+        width: 95%;
+    }
+    
+    aside.socialwidgets-aside {
+         max-width: 440px;
+    }
 	
 	img.profilepic {
 		height: 140px;
@@ -945,7 +951,7 @@ td.widget {
 }
 
 td.bibtexitem {
-	background: #e0e0e0;
+    background: #e0e0e0;
 }
 
 /* For Fontawesome */
@@ -964,4 +970,53 @@ fab {
 /* Add a hover effect if you want */
 .fab:hover {
     opacity: 0.7;
+}
+
+/* Dark mode: placed at end to override base styles */
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; }
+  /* Neutralize overall tone */
+  html { background-color: #7a7a7a; }
+  body {
+    background-color: #7a7a7a; /* neutral dark grey */
+    color: #e6e6e6;
+  }
+  /* Main content and panels */
+  div.main { color: #e0e0e0; }
+  div.news,
+  div.sections { background: #6f6f6f; color: #f5f5f5; box-shadow: none; }
+
+  /* Headings */
+  h1.heading,
+  h2.heading { border-bottom-color: #d0d0d0; }
+
+  /* Links */
+  a { color: #d9d9d9; }
+  a:hover { color: #efefef; }
+  /* Keep top-nav white on dark banner */
+  .nav-menu .menu { color: #fff; }
+
+  /* Sidebar and tables */
+  aside.socialwidgets-aside { background: #666666; color: #f5f5f5; }
+  td.bibtexitem { background: #404040; }
+
+  /* Warmer silvertone profile photo in dark mode (more sepia) */
+  img.profilepic { 
+    /* grayscale + more sepia, warmer hue, balanced saturation */
+    filter: drop-shadow(7px 7px 7px #222222)
+            grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%)
+            brightness(0.86) contrast(1.06);
+    -webkit-filter: drop-shadow(7px 7px 7px #222222)
+            grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%)
+            brightness(0.86) contrast(1.06);
+  }
+
+  /* Darker banner for dark mode (higher specificity) */
+  div.banner { background: #1b2a55; }
+  div.banner.sticky { background: #1b2a55; }
+}
+
+/* Dark mode mobile nav overlay */
+@media (prefers-color-scheme: dark) and (max-width: 900px) {
+  .nav-menu { background: rgba(27, 42, 85, 0.98); box-shadow: 0 6px 20px rgba(0,0,0,0.35); }
 }

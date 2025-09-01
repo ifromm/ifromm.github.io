@@ -178,11 +178,13 @@
 				<!-- Bluesky -->
 				<div><small>
 						<h4 id="bluesky-heading">Latest from <a href="https://bsky.app/profile/frommholz.org">my Bluesky</a></h4>
-						<bsky-embed username="frommholz.org" mode="feed" limit="3" custom-styles="
-      						/* shrink overall font on the host */
-      						:host { font-size: 75% !important; }
+						<bsky-embed username="frommholz.org" mode="feed" limit="1" custom-styles="
+      						/* shrink overall font on the host and make it fill container */
+      						:host { font-size: 75% !important; width: 100% !important; }
       						/* make sure all text children inherit */
-      				* { font-size: inherit !important; } ">
+      				* { font-size: inherit !important; }
+                    /* wrap long links inside the widget */
+                    a { word-break: break-word !important; overflow-wrap: anywhere !important; } ">
 						</bsky-embed>
 							<noscript>
 								<p>
@@ -640,8 +642,11 @@
 			</div><br />
 			<div class="sections">
 				<h1 class="heading" id="cv">CV</h1>
+				<h2 class="heading">Short Bio (to copy&amp;paste)</h2>
+				<p>
+					Prof. Dr. Ingo Frommholz is Professor and Head of the School of Applied Data Science at Modul University Vienna, Austria, and Adjunct Professor at the Bern University of Applied Sciences. His research focuses on user-oriented and interactive information retrieval, quantum-inspired models, AI and deep learning, large language models, and bibliometric-enhanced search, with applications ranging from digital humanities and scientometrics to cyberstalking detection. He has been Principal Investigator of major international projects such as the EU Horizon Europe OMINO project on information overload and the EU H2020 QUARTZ project on quantum-inspired information access, with a funding portfolio exceeding 5 million EUR. Ingo is Chair of the BCS Information Retrieval Specialist Group, Senior Managing Editor of the International Journal on Digital Libraries (Springer), and serves on the steering committees of leading ACM conferences including CIKM and SIGIR-ICTIR. He has published more than 100 scholarly works, supervised PhD students across Europe, and is a Fellow of the British Computer Society (FBCS) and the Higher Education Academy (FHEA).
+				</p>
 				<ul>
-					<li><a href="bio_frommholz.txt">Short Bio (1 paragraph, TXT)</a></li>
 					<li><a href="cv-frommholz.pdf">Full CV (PDF, long, all publications)</a></li>
 					<li><a href="cv-frommholz-4p.pdf">Shorter CV (4 pages, PDF, selected publications)</a></li>
 					<li><a href="cv-frommholz-2p.pdf">Even shorter CV (2 pages, PDF, no publication list)</a></li>
