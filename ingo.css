@@ -23,31 +23,41 @@ body {
 
 /* moved dark mode block to end for proper override */
 @media (prefers-color-scheme: light) {
-  html { background-color: #e5e5e5; }
-  body {
-    background-color: #dfdfdf;
-    color: inherit;
-  }
-  /* Ensure light mode keeps original look */
-  div.news, div.sections {
-    background: #d9d9d9;
-    color: black;
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08),
-                inset 0 1px 0 rgba(255,255,255,0.45);
-  }
-  aside.socialwidgets-aside {
-    background: #e7e7e7;
-    color: inherit;
-    border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08),
-                inset 0 1px 0 rgba(255,255,255,0.45);
-  }
-  div.banner { background: rgba(80, 113, 192, 1.0); }
-  img.profilepic {
-    filter: drop-shadow(7px 7px 7px #444444);
-    -webkit-filter: drop-shadow(7px 7px 7px #444444);
-  }
+	html {
+		background-color: #e5e5e5;
+	}
+
+	body {
+		background-color: #dfdfdf;
+		color: inherit;
+	}
+
+	/* Ensure light mode keeps original look */
+	div.news,
+	div.sections {
+		background: #d9d9d9;
+		color: black;
+		border: 1px solid rgba(0, 0, 0, 0.06);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
+			inset 0 1px 0 rgba(255, 255, 255, 0.45);
+	}
+
+	aside.socialwidgets-aside {
+		background: #e7e7e7;
+		color: inherit;
+		border: 1px solid rgba(0, 0, 0, 0.06);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
+			inset 0 1px 0 rgba(255, 255, 255, 0.45);
+	}
+
+	div.banner {
+		background: rgba(80, 113, 192, 1.0);
+	}
+
+	img.profilepic {
+		filter: drop-shadow(7px 7px 7px #444444);
+		-webkit-filter: drop-shadow(7px 7px 7px #444444);
+	}
 }
 
 a.menu {
@@ -101,6 +111,7 @@ a.menu:hover {
 	margin: 0 0 0 10px;
 	z-index: 100;
 }
+
 .hamburger span {
 	display: block;
 	width: 28px;
@@ -119,22 +130,22 @@ a.menu:hover {
 		right: 18px;
 		z-index: 1001;
 	}
-	
+
 	/* Add padding to banner content to prevent hamburger overlap */
 	div.content {
 		padding-right: 60px;
 	}
-	
+
 	/* Ensure proper banner sizing when hamburger menu is active */
 	div.banner {
 		height: 160px;
 		min-height: 20px;
 	}
-	
+
 	div.banner.sticky {
 		height: 60px !important;
 	}
-	
+
 	.nav-menu {
 		display: none;
 		flex-direction: column;
@@ -145,13 +156,15 @@ a.menu:hover {
 		left: 10px;
 		padding: 20px 0 10px 0;
 		border-radius: 10px;
-		box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 		z-index: 99;
 		text-align: left;
 	}
+
 	.nav-menu.open {
 		display: flex;
 	}
+
 	.nav-menu .menu {
 		display: block;
 		margin: 5px 20px;
@@ -167,20 +180,21 @@ a.menu:hover {
 		word-spacing: normal;
 		letter-spacing: normal;
 	}
+
 	.nav-menu .menu:hover {
-		background: rgba(255,255,255,0.12);
+		background: rgba(255, 255, 255, 0.12);
 	}
-	
+
 	/* Hide the separators on mobile */
-	.nav-menu .menu + .menu:before {
+	.nav-menu .menu+.menu:before {
 		display: none;
 	}
 }
 
 @media (max-width: 900px) {
-    .nav-menu .sep {
-        display: none;
-    }
+	.nav-menu .sep {
+		display: none;
+	}
 }
 
 /* Desktop nav stays horizontal */
@@ -188,6 +202,7 @@ a.menu:hover {
 	.hamburger {
 		display: none;
 	}
+
 	.nav-menu {
 		display: block !important;
 		position: static;
@@ -198,6 +213,7 @@ a.menu:hover {
 		text-align: center;
 		line-height: 1.2;
 	}
+
 	.nav-menu .menu {
 		display: inline-block;
 		margin: 0 2px;
@@ -211,8 +227,9 @@ a.menu:hover {
 		letter-spacing: normal;
 		white-space: nowrap;
 	}
+
 	.nav-menu .menu:hover {
-		background: rgba(255,255,255,0.18);
+		background: rgba(255, 255, 255, 0.18);
 	}
 }
 
@@ -227,6 +244,7 @@ a.menu:hover {
 	.nav-menu {
 		line-height: 1.2;
 	}
+
 	.nav-menu .menu {
 		font-size: 0.85em;
 		padding: 4px 6px;
@@ -236,19 +254,19 @@ a.menu:hover {
 		letter-spacing: normal;
 		white-space: nowrap;
 	}
-	
-    /* Fix social media icons overflow */
-    aside.socialwidgets-aside {
-        max-width: 420px;
-        min-width: 420px;
-    }
-	
-	
+
+	/* Fix social media icons overflow */
+	aside.socialwidgets-aside {
+		max-width: 420px;
+		min-width: 420px;
+	}
+
+
 	div p.socialwidgets a {
 		font-size: 20px;
 		padding: 4px;
 	}
-	
+
 }
 
 /* Mobile navigation */
@@ -263,15 +281,15 @@ a.menu:hover {
 		left: 10px;
 		padding: 20px 0 10px 0;
 		border-radius: 10px;
-		box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 		z-index: 99;
 		text-align: left;
 	}
-	
+
 	.nav-menu.open {
 		display: flex;
 	}
-	
+
 	.nav-menu .menu {
 		display: block;
 		margin: 5px 20px;
@@ -287,16 +305,16 @@ a.menu:hover {
 		word-spacing: normal;
 		letter-spacing: normal;
 	}
-	
+
 	.nav-menu .menu:hover {
-		background: rgba(255,255,255,0.12);
+		background: rgba(255, 255, 255, 0.12);
 	}
-	
+
 	/* Hide the separators on mobile */
-	.nav-menu .menu + .menu:before {
+	.nav-menu .menu+.menu:before {
 		display: none;
 	}
-	
+
 	/* Hide center tag on mobile */
 	center {
 		text-align: left;
@@ -305,7 +323,7 @@ a.menu:hover {
 
 h1.heading {
 	/*color: white;
-	background-color: #5070c0;*/
+  background-color: #5070c0;*/
 	text-align: left;
 	font-size: 160%;
 	padding: 4px;
@@ -313,7 +331,7 @@ h1.heading {
 	min-width: 240pt;
 	font-weight: normal;
 	border-bottom: 2px solid #5070c0;
-	margin-top:1.3em;
+	margin-top: 1.3em;
 }
 
 @media (max-width: 900px) {
@@ -327,7 +345,7 @@ h1.heading {
 
 h2.heading {
 	/*color: white;
-	background-color: #5070c0;*/
+  background-color: #5070c0;*/
 	text-align: left;
 	font-size: 120%;
 	font-weight: normal;
@@ -368,7 +386,10 @@ p {
 }
 
 /* Normalize text content to collapse multiple spaces */
-p, div, span, li {
+p,
+div,
+span,
+li {
 	white-space: normal;
 	word-spacing: normal;
 	text-rendering: optimizeLegibility;
@@ -380,12 +401,13 @@ p, div, span, li {
 	}
 }
 
-p.new{
+p.new {
 	border-style: solid;
 	border-width: 0px 0px 0px 5px;
 	border-color: blue;
 	padding: 8px;
 }
+
 p.new::before {
 	/*content: 'NEW - \A'; */
 	font-weight: bold;
@@ -400,8 +422,8 @@ p.new::before {
 }
 
 ul li img {
-    margin-left: 10px;
-    vertical-align: bottom;
+	margin-left: 10px;
+	vertical-align: bottom;
 }
 
 div.main {
@@ -426,7 +448,7 @@ div.main {
 div.banner {
 	margin: 0px auto;
 	/* position: -webkit-sticky; */
-	position: sticky; 
+	position: sticky;
 	z-index: 20;
 	top: 0;
 	width: 100%;
@@ -435,10 +457,10 @@ div.banner {
 	background: rgba(80, 113, 192, 1.0);
 	/*background: rgba(182,182,182, 1.0);*/
 	/*background-image: url('crystal_text.png');
-	background-size: cover;
-	background-repeat:no-repeat;
-	background-position: center center;
-	background-blend-mode: overlay;*/
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-blend-mode: overlay;*/
 	height: 200px;
 	/* offsetTop:500; */
 }
@@ -449,17 +471,18 @@ div.banner {
 		height: 160px;
 		min-height: 20px;
 	}
-	
+
 	/* Ensure JavaScript can still control banner height on mobile */
 	div.banner.sticky {
-		height: 20px !important;  /* 60px */
+		height: 20px !important;
+		/* 60px */
 	}
-	
+
 	/* Adjust content padding for smaller screens */
 	div.sticky+div.content {
 		padding-top: 180px;
 	}
-	
+
 	/* Ensure hamburger menu works properly on small screens */
 	.hamburger {
 		display: inline-block !important;
@@ -468,7 +491,7 @@ div.banner {
 		right: 18px;
 		z-index: 1001;
 	}
-	
+
 	/* Add padding to banner content to prevent hamburger overlap */
 	div.content {
 		padding-right: 60px;
@@ -477,6 +500,7 @@ div.banner {
 
 /* Extra small screens (phones) */
 @media (max-width: 480px) {
+
 	/* Ensure hamburger menu works properly on small screens */
 	.hamburger {
 		top: 9px;
@@ -488,54 +512,54 @@ div.banner {
 	}
 
 	/*
-	div.banner {
-		min-width: auto;
-		height: 140px;
-		min-height: 20px;
-	}
-	
-	div.banner.sticky {
-		height: 20px !important;
-	}
-	
-	div.sticky+div.content {
-		padding-top: 160px;
-	}
+  div.banner {
+    min-width: auto;
+    height: 140px;
+    min-height: 20px;
+  }
+
+  div.banner.sticky {
+    height: 20px !important;
+  }
+
+  div.sticky+div.content {
+    padding-top: 160px;
+  }
 */
 }
 
 
 
 div.news {
-		padding:16px;
-/*		margin:1px 0em 1px 1.5em; */
-		background:#f1f1f1;
-		color: black;
-		border-radius: 10px;
+	padding: 16px;
+	/*    margin:1px 0em 1px 1.5em; */
+	background: #f1f1f1;
+	color: black;
+	border-radius: 10px;
 }
 
 div.sections {
-		padding:16px;
-/*		margin:1px 0em 1px 1.5em; */
-		background:#f1f1f1;
-		/*color: black;*/
-		border-radius: 10px;
-		width: 100%;
-		margin: 0 auto;
-		box-sizing: border-box;
+	padding: 16px;
+	/*    margin:1px 0em 1px 1.5em; */
+	background: #f1f1f1;
+	/*color: black;*/
+	border-radius: 10px;
+	width: 100%;
+	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 /* Clear floats within sections without clipping shadows.
    Ensures floated elements (e.g., the media sidebar) are contained
    by the section card so borders/shadows render correctly. */
 div.sections::after {
-    content: "";
-    display: table;
-    clear: both;
+	content: "";
+	display: table;
+	clear: both;
 }
 
 div.sticky {
-	height:90px;
+	height: 90px;
 	/*background: rgba(80, 113, 192, 0.0);*/
 }
 
@@ -545,7 +569,7 @@ div.sticky {
 	}
 }
 
-div.container{
+div.container {
 	display: inline-block;
 }
 
@@ -576,12 +600,13 @@ div.sticky+div.content {
 }
 
 img.profilepic {
-	width: auto; /*120px */
+	width: auto;
+	/*120px */
 	height: 170px;
 	border-radius: 12px;
 	filter: drop-shadow(7px 7px 7px #444444);
-    -webkit-filter: drop-shadow(7px 7px 7px #444444);
-    transition: filter 200ms ease, -webkit-filter 200ms ease;
+	-webkit-filter: drop-shadow(7px 7px 7px #444444);
+	transition: filter 200ms ease, -webkit-filter 200ms ease;
 }
 
 @media (max-width: 900px) {
@@ -603,7 +628,7 @@ img.profilepic {
 img.profilepic2 {
 	display: none;
 	/*width: auto;
-	height: 50px; */
+  height: 50px; */
 	/*-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
 	/*filter: grayscale(100%);*/
 }
@@ -638,9 +663,9 @@ p.address {
 
 /*
 @media (max-width: 480px) {
-	p.address {
-		font-size: 0.8em;
-	}
+  p.address {
+    font-size: 0.8em;
+  }
 }
 */
 
@@ -691,9 +716,9 @@ h1.myname {
 	}
 }
 
-div.socialwidgets{
+div.socialwidgets {
 	width: 320px;
-	text-align:right;
+	text-align: right;
 	max-width: 100%;
 	overflow: hidden;
 }
@@ -712,10 +737,10 @@ div.socialwidgets{
    - Collapses to full width on mobile via the breakpoint below */
 aside.socialwidgets-aside {
 	float: right;
-	padding:6px;
-	margin:10px 10px 1px 1.5em;
-	background:#e7e7e7;
-	max-width:460px;
+	padding: 6px;
+	margin: 10px 10px 1px 1.5em;
+	background: #e7e7e7;
+	max-width: 460px;
 	border-radius: 10px;
 }
 
@@ -732,8 +757,8 @@ aside.socialwidgets-aside {
 aside.ijdl-aside {
 	float: right;
 	/*background: #e8e8e8;*/
-	padding:1px 0 1px 1.5em;
-	margin:0;
+	padding: 1px 0 1px 1.5em;
+	margin: 0;
 }
 
 @media (max-width: 900px) {
@@ -759,7 +784,7 @@ aside.cikm-aside {
 	}
 }
 
-twitter-timeline{
+twitter-timeline {
 	float: right;
 	padding: 1px 1px 1px 1.5em;
 }
@@ -805,24 +830,29 @@ img.rightfloat {
 
 /* Mobile-specific improvements */
 @media (max-width: 900px) {
+
 	/* Improve touch targets */
 	a {
 		min-height: 44px;
 		line-height: 44px;
 	}
-	
+
 	/* Better spacing for mobile */
-	div.news, div.sections {
+	div.news,
+	div.sections {
 		margin-bottom: 20px;
 	}
-	
+
 	/* Improve readability */
 	div.main {
 		line-height: 1.6;
 	}
-	
+
 	/* Fix text spacing issues on mobile */
-	p, div, span, li {
+	p,
+	div,
+	span,
+	li {
 		word-spacing: normal;
 		letter-spacing: normal;
 		white-space: normal;
@@ -831,7 +861,7 @@ img.rightfloat {
 		-moz-osx-font-smoothing: grayscale;
 		line-height: 1.4;
 	}
-	
+
 	/* Remove extra spaces and normalize text */
 	p {
 		text-align: left;
@@ -840,7 +870,7 @@ img.rightfloat {
 		line-height: 1.4;
 		margin-bottom: 0.8em;
 	}
-	
+
 	/* Fix link spacing issues */
 	a {
 		word-spacing: normal;
@@ -851,42 +881,46 @@ img.rightfloat {
 		overflow-wrap: break-word;
 		line-height: inherit;
 	}
-	
+
 	/* Prevent double spaces in link text */
 	a:before,
 	a:after {
 		content: none;
 	}
-	
+
 	/* Ensure links don't create extra spacing */
 	p a {
 		display: inline;
 		word-break: break-word;
 		line-height: inherit;
 	}
-	
+
 	/* Collapse multiple spaces and normalize whitespace */
-	p, div, span, li, a {
+	p,
+	div,
+	span,
+	li,
+	a {
 		white-space: normal;
 		word-spacing: normal;
 	}
-	
+
 	/* Force collapse of multiple spaces */
 	* {
 		white-space-collapse: collapse;
 	}
-	
+
 	/* Fix banner menu spacing */
 	.nav-menu {
 		line-height: 1.2;
 	}
-	
+
 	.nav-menu .menu {
 		line-height: 1.2;
 		margin: 2px 0;
 		padding: 8px 10px;
 	}
-	
+
 	/* Better social icons layout */
 	div p.socialwidgets {
 		display: flex;
@@ -895,56 +929,60 @@ img.rightfloat {
 		gap: 8px;
 		max-width: 100%;
 	}
-	
+
 	div p.socialwidgets a {
 		font-size: 22px;
 		padding: 2px;
 	}
-	
+
 	div p.socialwidgets a:hover {
 		background-color: rgba(80, 113, 192, 0.1);
 	}
-	
+
 	/* Improve iframe responsiveness */
 	iframe {
 		max-width: 100%;
 		height: auto;
 	}
-	
+
 	/* Better table layout on mobile */
 	table {
 		width: 100%;
 		font-size: 14px;
 	}
-	
+
 	/* Improve list readability */
-	ul, ol {
+	ul,
+	ol {
 		padding-left: 20px;
 	}
-	
+
 	/* Better image handling */
 	img {
 		max-width: 100%;
 		height: auto;
 	}
-	
+
 	/* Improve form elements */
-	input, textarea, select {
-		font-size: 16px; /* Prevents zoom on iOS */
+	input,
+	textarea,
+	select {
+		font-size: 16px;
+		/* Prevents zoom on iOS */
 		max-width: 100%;
 	}
 }
 
 /* Tablet improvements */
 @media (min-width: 900px) and (max-width: 1024px) {
-    div.main {
-        width: 97%;
-    }
-    
-    aside.socialwidgets-aside {
-         max-width: 440px;
-    }
-	
+	div.main {
+		width: 97%;
+	}
+
+	aside.socialwidgets-aside {
+		max-width: 440px;
+	}
+
 	img.profilepic {
 		height: 140px;
 	}
@@ -960,46 +998,48 @@ img.rightfloat {
    - Sections/news occupy full content width
    - Media sidebar narrower on wide screens (420px) */
 @media (min-width: 1280px) {
-    /* Fix the overall content width so sections don't shrink */
-    div.content {
-        width: 1140px;
-        max-width: 1140px;
-        min-width: 1140px;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-    /* Let sections/news use the full fixed content width */
-    div.sections,
-    div.news {
-        width: 100%;
-        max-width: 100%;
-        min-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-    }
+	/* Fix the overall content width so sections don't shrink */
+	div.content {
+		width: 1140px;
+		max-width: 1140px;
+		min-width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-    /* Slightly narrower media box if needed to fit comfortably */
-    aside.socialwidgets-aside {
-        max-width: 420px; /* narrower to fit comfortably */
-    }
+	/* Let sections/news use the full fixed content width */
+	div.sections,
+	div.news {
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	/* Slightly narrower media box if needed to fit comfortably */
+	aside.socialwidgets-aside {
+		max-width: 420px;
+		/* narrower to fit comfortably */
+	}
 }
 
 /*
 img.ijdl {
-	float: left;
-	padding: 10px 20px 10px;
-	border: none;
+  float: left;
+  padding: 10px 20px 10px;
+  border: none;
 }
 */
 
 div.footer {
-    padding: 8px;
-    text-align: right;
-    width: 100%;
-    max-width: 820px;
-    margin: 0 auto;
-    box-sizing: border-box;
+	padding: 8px;
+	text-align: right;
+	width: 100%;
+	max-width: 820px;
+	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 div.imgbanners {
@@ -1015,7 +1055,7 @@ td.widget {
 }
 
 td.bibtexitem {
-    background: #e0e0e0;
+	background: #e0e0e0;
 }
 
 /* For Fontawesome */
@@ -1023,8 +1063,8 @@ td.bibtexitem {
 /* Style all font awesome icons */
 
 fab {
-    font-size: 44px;
-    /*
+	font-size: 44px;
+	/*
     width: 50px;
     text-align: center;
     text-decoration: none;
@@ -1033,84 +1073,117 @@ fab {
 
 /* Add a hover effect if you want */
 .fab:hover {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 
 /* Dark mode: placed at end to override base styles */
 @media (prefers-color-scheme: dark) {
-  :root { color-scheme: dark; }
-  /* Neutralize overall tone */
-  html { background-color: #0e0e0e; }
-  body {
-    background-color: #0e0e0e; /* near-black background */
-    color: #e6e6e6;
-  }
-  /* Main content and panels */
-  div.main { color: #e0e0e0; }
-  /* Darken the name badge slightly in dark mode */
-  h1.myname {
-    background-color: rgba(10, 15, 40, 0.70);
-  }
-  div.news,
-  div.sections {
-    background: #2a2a2a; /* lighter for better contrast with black text */
-    color: #f5f5f5;
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.28),
-                inset 0 1px 0 rgba(255,255,255,0.04);
-  }
+	:root {
+		color-scheme: dark;
+	}
 
-  /* Headings: match link blue for underline */
-  h1.heading,
-  h2.heading { border-bottom-color: #7aa6ff; }
+	/* Neutralize overall tone */
+	html {
+		background-color: #0e0e0e;
+	}
 
-  /* Links: clearer blue tone in dark mode */
-  a { color: #7aa6ff; }
-  a:hover { color: #aecdff; }
-  /* Keep top-nav white on dark banner */
-  .nav-menu .menu { color: #fff; }
+	body {
+		background-color: #0e0e0e;
+		/* near-black background */
+		color: #e6e6e6;
+	}
 
-  /* Sidebar and tables */
-  aside.socialwidgets-aside {
-    background: #161616; /* brighter, still darker than sections */
-    color: #f5f5f5;
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.28),
-                inset 0 1px 0 rgba(255,255,255,0.04);
-  }
-  td.bibtexitem { background: #404040; }
+	/* Main content and panels */
+	div.main {
+		color: #e0e0e0;
+	}
 
-  /* Blend transparent logos over dark background for readability */
-  img[src$="Omino-trans.png"],
-  img[src$="quartz-logo-square.png"],
-  img[src$="CIKM.png"] {
-    background-color: transparent; /* remove solid bg */
-    mix-blend-mode: screen;        /* brighten over dark bg */
-  }
+	/* Darken the name badge slightly in dark mode */
+	h1.myname {
+		background-color: rgba(10, 15, 40, 0.70);
+	}
 
-  /* Extra boost for OMINO logo: stronger brightness/contrast, no glow */
-  img[src$="Omino-trans.png"] {
-    filter: brightness(100) contrast(0.1) saturate(1000%);
-    -webkit-filter: brightness(100) contrast(0.1) saturate(1000%);
-  }
+	div.news,
+	div.sections {
+		background: #2a2a2a;
+		/* lighter for better contrast with black text */
+		color: #f5f5f5;
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28),
+			inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	}
 
-  /* Warmer silvertone profile photo in dark mode (more sepia) */
-  img.profilepic { 
-    /* grayscale + more sepia, warmer hue, balanced saturation */
-    filter: drop-shadow(7px 7px 7px #222222)
-            grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%)
-            brightness(0.86) contrast(1.06);
-    -webkit-filter: drop-shadow(7px 7px 7px #222222)
-            grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%)
-            brightness(0.86) contrast(1.06);
-  }
+	/* Headings: match link blue for underline */
+	h1.heading,
+	h2.heading {
+		border-bottom-color: #7aa6ff;
+	}
 
-  /* Darker banner for dark mode (higher specificity) */
-  div.banner { background: #1b2a55; }
-  div.banner.sticky { background: #1b2a55; }
+	/* Links: clearer blue tone in dark mode */
+	a {
+		color: #7aa6ff;
+	}
+
+	a:hover {
+		color: #aecdff;
+	}
+
+	/* Keep top-nav white on dark banner */
+	.nav-menu .menu {
+		color: #fff;
+	}
+
+	/* Sidebar and tables */
+	aside.socialwidgets-aside {
+		background: #161616;
+		/* brighter, still darker than sections */
+		color: #f5f5f5;
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28),
+			inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	}
+
+	td.bibtexitem {
+		background: #404040;
+	}
+
+	/* Blend transparent logos over dark background for readability */
+	img[src$="Omino-trans.png"],
+	img[src$="quartz-logo-square.png"],
+	img[src$="CIKM.png"] {
+		background-color: transparent;
+		/* remove solid bg */
+		mix-blend-mode: screen;
+		/* brighten over dark bg */
+	}
+
+	/* Extra boost for OMINO logo: stronger brightness/contrast, no glow */
+	img[src$="Omino-trans.png"] {
+		filter: brightness(100) contrast(0.1) saturate(1000%);
+		-webkit-filter: brightness(100) contrast(0.1) saturate(1000%);
+	}
+
+	/* Warmer silvertone profile photo in dark mode (more sepia) */
+	img.profilepic {
+		/* grayscale + more sepia, warmer hue, balanced saturation */
+		filter: drop-shadow(7px 7px 7px #222222) grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%) brightness(0.86) contrast(1.06);
+		-webkit-filter: drop-shadow(7px 7px 7px #222222) grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%) brightness(0.86) contrast(1.06);
+	}
+
+	/* Darker banner for dark mode (higher specificity) */
+	div.banner {
+		background: #1b2a55;
+	}
+
+	div.banner.sticky {
+		background: #1b2a55;
+	}
 }
 
 /* Dark mode mobile nav overlay */
 @media (prefers-color-scheme: dark) and (max-width: 900px) {
-  .nav-menu { background: rgba(27, 42, 85, 0.98); box-shadow: 0 6px 20px rgba(0,0,0,0.35); }
+	.nav-menu {
+		background: rgba(27, 42, 85, 0.98);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+	}
 }

@@ -44,15 +44,15 @@
 
 	<script type="text/javascript" src="blankwin.js"></script>
 	<script type="text/javascript" src="banner.js"></script>
-	
+
 	<script>
 		// Hamburger menu functionality
 		function initHamburgerMenu() {
 			var hamburger = document.getElementById('hamburger-menu');
 			var navMenu = document.getElementById('nav-menu');
-			
+
 			if (hamburger && navMenu) {
-				hamburger.addEventListener('click', function() {
+				hamburger.addEventListener('click', function () {
 					var expanded = hamburger.getAttribute('aria-expanded') === 'true';
 					hamburger.setAttribute('aria-expanded', !expanded);
 					navMenu.classList.toggle('open');
@@ -129,10 +129,13 @@
 			<div class="news">
 				<h1 class="heading"> What's going on</h1>
 				<p class="new">
+					<a href="https://2025.jcdl.org/">JCDL 2025</a>, the ACM/IEEE Joint Conference on Digital Libraries, will take place as a fully virtual event in December 2025. I'm happy to be one of the programme chairs. We are still calling for papers!
+				</p>
+				<p class="new">
 					<a href="https://2025.essir.eu/">ELLIS ESSIR 2025</a>, the European Summer School on Information
 					Retrieval, took place in Wolverhampton, UK, July 7-11. The mission of the school is to enable
 					students to learn about modern research challenges and methods on IR and related disciplines like AI
-					and NLP. 
+					and NLP.
 				</p>
 
 			</div>
@@ -161,7 +164,7 @@
 								rel="me noopener noreferrer" style="vertical-align:top;">
 						</div>
 						</p>
-						<p  class="socialicon">
+						<p class="socialicon">
 							<a href="https://orcid.org/0000-0002-5622-5132" class="fa-brands fa-orcid"></a>
 
 							<a href="https://idf.social/@ingo/" class="fa-brands fa-mastodon"></a>
@@ -181,7 +184,8 @@
 					</div>
 					<!-- Bluesky -->
 					<div><small>
-							<h4 id="bluesky-heading">Latest from <a href="https://bsky.app/profile/frommholz.org">my Bluesky</a></h4>
+							<h4 id="bluesky-heading">Latest from <a href="https://bsky.app/profile/frommholz.org">my
+									Bluesky</a></h4>
 							<bsky-embed username="frommholz.org" mode="feed" limit="1" custom-styles="
 	 						/* shrink overall font on the host and make it fill container */
 	 						:host { font-size: 75% !important; width: 100% !important; }
@@ -190,14 +194,14 @@
                     /* wrap long links inside the widget */
                     a { word-break: break-word !important; overflow-wrap: anywhere !important; } ">
 							</bsky-embed>
-								<noscript>
-									<p>
-										Enable JavaScript to see my latest Bluesky posts.
-										<a href="https://bsky.app/profile/frommholz.org">View on bsky.app</a>
-									</p>
-								</noscript>
+							<noscript>
+								<p>
+									Enable JavaScript to see my latest Bluesky posts.
+									<a href="https://bsky.app/profile/frommholz.org">View on bsky.app</a>
+								</p>
+							</noscript>
 						</small>
-					</div> 
+					</div>
 					<!-- Mastodon 
 					<div id="mt-container" class="mt-container">
 						<div class="mt-body" role="feed" style="font-size: small;">
@@ -206,7 +210,7 @@
 					</div>
 						-->
 					<!-- Mastodon embed timeline widget  https://gitlab.com/idotj/mastodon-embed-timeline -->
-					 <!--
+					<!--
 					<script src="mastodon-embed-timeline/mastodon-timeline.umd.js"></script>
 					<script>
 						// see https://gitlab.com/idotj/mastodon-embed-timeline
@@ -232,9 +236,11 @@
 				-->
 				</aside>
 				<p>
-					<ul>
-						<li><a href="https://notebooklm.google.com/notebook/309ac278-f033-4287-bb63-18e514cb9421?artifactId=34ad722f-e03c-495b-9088-122e77cbe6d3">What NotebookLM thinks I'm doing</a> (AI-generated)</li>
-					</ul>
+				<ul>
+					<li><a
+							href="https://notebooklm.google.com/notebook/309ac278-f033-4287-bb63-18e514cb9421?artifactId=34ad722f-e03c-495b-9088-122e77cbe6d3">What
+							NotebookLM thinks I'm doing</a> (AI-generated)</li>
+				</ul>
 				<p>
 
 					<!-- <a href="https://www.wlv.ac.uk/"><img alt="University of Wolverhampton" src="wlv.svg"
@@ -250,20 +256,28 @@
 						href="https://en.wikipedia.org/wiki/Information_retrieval">Information Retrieval</a>, <a
 						href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence">generative AI</a> and
 					its application in disciplines such as
-					<a href="https://en.wikipedia.org/wiki/Digital_library">Digital Libraries</a>. I am chair of the <a href="https:irsg.bcs.org/">BCS Information Retrieval Specialist Group (BCS-IRSG)</a>. I was general chair
-					of <a href="https://web.archive.org/web/20240518044516/https://uobevents.eventsair.com/cikm2023//">ACM CIKM 2023</a> and I am programme chair of <a
-						href="https://2025.jcdl.org/">ACM JCDL 2025</a>. I was chair of the <a href="https://2025.essir.eu/">ELLIS ESSIR 2025 European Summer School on Information Retrieval</a>.
+					<a href="https://en.wikipedia.org/wiki/Digital_library">Digital Libraries</a>. I am chair of the <a
+						href="https:irsg.bcs.org/">BCS Information Retrieval Specialist Group (BCS-IRSG)</a>. I was
+					general chair
+					of <a
+						href="https://web.archive.org/web/20240518044516/https://uobevents.eventsair.com/cikm2023//">ACM
+						CIKM 2023</a> and I am programme chair of <a href="https://2025.jcdl.org/">ACM JCDL 2025</a>. I
+					was chair of the <a href="https://2025.essir.eu/">ELLIS ESSIR 2025 European Summer School on
+						Information Retrieval</a>.
 
 				</p>
 
 				<p>
-					Before joining Modul University, I was <a href="https://en.wikipedia.org/wiki/Reader_(academic_rank)">Reader (Associate Professor
+					Before joining Modul University, I was <a
+						href="https://en.wikipedia.org/wiki/Reader_(academic_rank)">Reader (Associate Professor
 						equivalent)</a> in <a href="https://en.wikipedia.org/wiki/Data_science">Data Science</a> in the
 					<a
 						href="https://www.wlv.ac.uk/schools-and-institutes/faculty-of-science-and-engineering/school-of-mathematics-and-computer-science/">School
-						of Engineering, Computing and Mathematical Sciences</a> at the <a href="https://www.wlv.ac.uk">University of
+						of Engineering, Computing and Mathematical Sciences</a> at the <a
+						href="https://www.wlv.ac.uk">University of
 						Wolverhampton</a> in the UK. I was the head and
-					founder of the Data Science, AI, Information Retrieval and NLP research group <a href="https://dairel.org/">DAIREL</a>.Prior to this, I was Senior Lecturer in the <a
+					founder of the Data Science, AI, Information Retrieval and NLP research group <a
+						href="https://dairel.org/">DAIREL</a>.Prior to this, I was Senior Lecturer in the <a
 						href="https://www.beds.ac.uk/howtoapply/departments/computing">School of Computer Science and
 						Technology</a> of the <a href="https://www.beds.ac.uk/"> University of Bedfordshire</a> in
 					Luton, UK. I was a member of the <a href="https://ir.dcs.gla.ac.uk">Information Retrieval group</a>
@@ -307,7 +321,7 @@
 					national and international research and knowledge transfer projects.
 				</p>
 				<!-- <p>Further to this, I am the General Chair of the <a href="http://cikm2023.org/">ACM Conference on Information and Knowledge Management (CIKM 2023)</a> in Birmingham, UK.</p> -->
-			</div><br/>
+			</div><br />
 			<div class="sections">
 				<h1 class="heading" id="research">Research Interests</h1>
 				<p>
@@ -346,7 +360,7 @@
 					</li>
 					<li><a
 							href="papers/2015-Cluster-based_Polyrepresentation_as_Science_Modelling_Approach_for_Information_Retrieval.pdf">Bibliometric-enhanced
-							Information Retrieval</a></li>
+							Information Retrieval</a> for Scholarly Information Systems</li>
 					<li><a
 							href="papers/2004-Annotations_in_Digital_Libraries_and_Collaboratories_--_Facets_Models_and_Usage.pdf">Annotations</a>,
 						<a href="papers/2005-DiLAS_a_Digital_Library_Annotation_Service.pdf">Annotation Services</a>
@@ -375,9 +389,8 @@
 							Information Retrieval</a></li>
 				</ul>
 				</p>
-				<p><em>Please <a href="mailto:i.frommholz@wlv.ac.uk">contact me</a> if you are interested in a BSc, MSc
-						or PhD project in
-						these areas</em>.</p>
+				<p><em>Please <a href="mailto:ingo.frommholz@modul.ac.at">contact me</a> if you are interested in a BSc, MSc
+						or PhD project in these areas</em>.</p>
 			</div><br />
 			<div class="sections">
 				<h1 class="heading" id="projects">Research/Knowledge Transfer Projects</h1>
@@ -404,7 +417,8 @@
 
 					<li><a href="http://edison-project.eu">EDISON</a>, an EU H2020
 						Coordination and Support Action with the purpose of accelerating
-						the creation of the Data Science profession. I established the University of Bedfordshire as Data Science Champion University.</li>
+						the creation of the Data Science profession. I established the University of Bedfordshire as
+						Data Science Champion University.</li>
 
 
 					<li><a href="https://renaissance.dcs.gla.ac.uk/">Renaissance</a>
@@ -440,7 +454,8 @@
 						<a
 							href="https://www.ist-world.net/ProjectDetails.aspx?ProjectId=409a4c335f114e078f6d6bbb9dc299e1">VIP-Advisor</a>
 						- Virtual, independent advisor for personal insurance
-						and finance risk management. EU-FP5 project.</li>
+						and finance risk management. EU-FP5 project.
+					</li>
 				</ul>
 
 				<h2 class="heading">Knowledge Transfer Projects</h2>
@@ -480,7 +495,7 @@
 				<p>
 				<ul>
 					<li>Kanishka Silva: <em>Self-Attentive Generative Adversarial Network based
-					Authorship Attribution in Historical Texts</em>. Awarded 2025. First Supervisor.</li>
+							Authorship Attribution in Historical Texts</em>. Awarded 2025. First Supervisor.</li>
 					<li>Mohsin Raza Naseem: <em>Biologically plausible energy-efficient
 							context-sensitive neural networks</em>. Awarded 2025. First Supervisor.</li>
 					<li>Amit Kumar Jaiswal: <em>Investigation of Quantum-inspired Modelling in Interactive Search based
@@ -520,8 +535,8 @@
 
 
 
-				</div><br />
-				<div class="sections">
+			</div><br />
+			<div class="sections">
 				<h1 class="heading" id="teaching">Teaching</h1>
 				<p> I was the coordinator of the <a
 						href="https://online.wlv.ac.uk/online-course/msc-computer-science-with-data-science/">MSc
@@ -562,20 +577,23 @@
 
 
 				<ul class="withbanner">
-					<li>Chair and former treasurer of the <a href="https://irsg.bcs.org/committee.php"
-							target="_blank">steering committee</a> of
-						the&nbsp; <a href="https://irsg.bcs.org/" target="_blank">BCS Information Retrieval Specialist
+					<li>Chair and former treasurer of 
+						the  <a href="https://irsg.bcs.org/" target="_blank">BCS Information Retrieval Specialist
 							Group</a>.
 					<li>
-						<aside class="cikm-aside"> <a href="https://web.archive.org/web/20240518044516/https://uobevents.eventsair.com/cikm2023//"><img class="ijdl"
+						<aside class="cikm-aside"> <a
+								href="https://web.archive.org/web/20240518044516/https://uobevents.eventsair.com/cikm2023//"><img
+									class="ijdl"
 									alt="ACM Conference on Information and Knowledge Management (CIKM 2023)"
 									src="CIKM.png" /></a></aside>
-						General Chair of the <a href="https://web.archive.org/web/20240518044516/https://uobevents.eventsair.com/cikm2023//">32nd ACM Conference on Information and
+						General Chair of the <a
+							href="https://web.archive.org/web/20240518044516/https://uobevents.eventsair.com/cikm2023//">32nd
+							ACM Conference on Information and
 							Knowledge Management (CIKM 2023)</a>, Birmingham, UK, October 2023.
 					</li>
 					<li>
 						Programme Chair of the <a href="https://2025.jcdl.org/">ACM/IEEE Joint Conference on Digital
-							Libraries (JCDL 2025)</a>, Vienna, Austria, June 2025.
+							Libraries (JCDL 2025)</a>, virtual event, December 2025.
 					</li>
 					<li>
 						<aside class="ijdl-aside"> <a href="https://springer.com/799"><img class="ijdl"
@@ -583,7 +601,8 @@
 						Managing editor of the <a href="https://springer.com/799">International
 							Journal on Digital Libraries</a> (IJDL).
 					</li>
-					<li>Chair of the <a href="https://2025.essir.eu/">ELLIS ESSIR 2025 European Summer School on Information Retrieval</a>.</li>
+					<li>Chair of the <a href="https://2025.essir.eu/">ELLIS ESSIR 2025 European Summer School on
+							Information Retrieval</a>.</li>
 					<li>(Senior) program committee member and reviewer of several
 						leading conferences such as ECDL/TPDL, JCDL, ECIR, ICTIR, CHIIR,
 						CIKM and SIGIR.</li>
@@ -644,7 +663,18 @@
 				<h1 class="heading" id="cv">Short Bio &amp; CV</h1>
 				<h2 class="heading">Short Bio (to copy&amp;paste)</h2>
 				<p>
-					Prof. Dr. Ingo Frommholz is Professor and Head of the School of Applied Data Science at Modul University Vienna, Austria, and Adjunct Professor at the Bern University of Applied Sciences. His research focuses on user-oriented and interactive information retrieval, quantum-inspired models, AI and deep learning, large language models, and bibliometric-enhanced search, with applications ranging from digital humanities and scientometrics to cyberstalking detection. He has been Principal Investigator of major international projects such as the EU Horizon Europe OMINO project on information overload and the EU H2020 QUARTZ project on quantum-inspired information access, with a funding portfolio exceeding 5 million EUR. Ingo is Chair of the BCS Information Retrieval Specialist Group, Senior Managing Editor of the International Journal on Digital Libraries (Springer), and serves on the steering committees of leading ACM conferences including CIKM and SIGIR-ICTIR. He has published more than 100 scholarly works, supervised PhD students across Europe, and is a Fellow of the British Computer Society (FBCS) and the Higher Education Academy (FHEA).
+					Prof. Dr. Ingo Frommholz is Professor and Head of the School of Applied Data Science at Modul
+					University Vienna, Austria, and Adjunct Professor at the Bern University of Applied Sciences. His
+					research focuses on user-oriented and interactive information retrieval, quantum-inspired models, AI
+					and deep learning, large language models, and bibliometric-enhanced search, with applications
+					ranging from digital humanities and scientometrics to cyberstalking detection. He has been Principal
+					Investigator of major international projects such as the EU Horizon Europe OMINO project on
+					information overload and the EU H2020 QUARTZ project on quantum-inspired information access, with a
+					funding portfolio exceeding 5 million EUR. Ingo is Chair of the BCS Information Retrieval Specialist
+					Group, Senior Managing Editor of the International Journal on Digital Libraries (Springer), and
+					serves on the steering committees of leading ACM conferences including CIKM and SIGIR-ICTIR. He has
+					published more than 100 scholarly works, supervised PhD students across Europe, and is a Fellow of
+					the British Computer Society (FBCS) and the Higher Education Academy (FHEA).
 				</p>
 				<ul>
 					<li><a href="cv-frommholz.pdf">Full CV (PDF, long, all publications)</a></li>
@@ -705,8 +735,8 @@
 
 	<div class="footer">
 		<div class="imgbanners">
-			<img class="links" alt="100% handcoded HTML"
-					src="handcode-white.png" />...with a bit of AI help. Last updated: 2025-09-01
+			<img class="links" alt="100% handcoded HTML" src="handcode-white.png" />...with a bit of AI help. Last
+			updated: 2025-09-01
 		</div>
 	</div>
 </body>
