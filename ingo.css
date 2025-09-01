@@ -23,14 +23,26 @@ body {
 
 /* moved dark mode block to end for proper override */
 @media (prefers-color-scheme: light) {
-  html { background-color: #ffffff; }
+  html { background-color: #e5e5e5; }
   body {
-    background-color: #f8f8f8;
+    background-color: #dfdfdf;
     color: inherit;
   }
   /* Ensure light mode keeps original look */
-  div.news, div.sections { background: #f1f1f1; color: black; }
-  aside.socialwidgets-aside { background: #e7e7e7; color: inherit; }
+  div.news, div.sections {
+    background: #d9d9d9;
+    color: black;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08),
+                inset 0 1px 0 rgba(255,255,255,0.45);
+  }
+  aside.socialwidgets-aside {
+    background: #e7e7e7;
+    color: inherit;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08),
+                inset 0 1px 0 rgba(255,255,255,0.45);
+  }
   div.banner { background: rgba(80, 113, 192, 1.0); }
   img.profilepic {
     filter: drop-shadow(7px 7px 7px #444444);
@@ -405,7 +417,7 @@ div.main {
 
 @media (max-width: 900px) {
 	div.main {
-		width: 95%;
+		width: 100%;
 		min-width: auto;
 		padding-top: 10px;
 	}
@@ -470,6 +482,11 @@ div.banner {
 		top: 9px;
 	}
 
+	/* Reduce side gap further on very small screens */
+	div.main {
+		width: 100%;
+	}
+
 	/*
 	div.banner {
 		min-width: auto;
@@ -506,6 +523,15 @@ div.sections {
 		width: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
+}
+
+/* Clear floats within sections without clipping shadows.
+   Ensures floated elements (e.g., the media sidebar) are contained
+   by the section card so borders/shadows render correctly. */
+div.sections::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 div.sticky {
@@ -681,6 +707,9 @@ div.socialwidgets{
 	}
 }
 
+/* Media sidebar: floats right inside sections on desktop.
+   - Base max-width tuned for typical layouts; overridden on wide screens
+   - Collapses to full width on mobile via the breakpoint below */
 aside.socialwidgets-aside {
 	float: right;
 	padding:6px;
@@ -909,7 +938,7 @@ img.rightfloat {
 /* Tablet improvements */
 @media (min-width: 900px) and (max-width: 1024px) {
     div.main {
-        width: 95%;
+        width: 97%;
     }
     
     aside.socialwidgets-aside {
@@ -919,6 +948,41 @@ img.rightfloat {
 	img.profilepic {
 		height: 140px;
 	}
+}
+
+/* Wide screens: keep a static content width
+   Rationale:
+   - At wide-screen thresholds, percentage widths can make cards feel too wide
+   - Use a fixed content column so margins grow while card widths stay stable
+   Details:
+   - Breakpoint: >=1280px
+   - Fixed content width: 1140px (centered)
+   - Sections/news occupy full content width
+   - Media sidebar narrower on wide screens (420px) */
+@media (min-width: 1280px) {
+    /* Fix the overall content width so sections don't shrink */
+    div.content {
+        width: 1140px;
+        max-width: 1140px;
+        min-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Let sections/news use the full fixed content width */
+    div.sections,
+    div.news {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* Slightly narrower media box if needed to fit comfortably */
+    aside.socialwidgets-aside {
+        max-width: 420px; /* narrower to fit comfortably */
+    }
 }
 
 /*
@@ -976,29 +1040,59 @@ fab {
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: dark; }
   /* Neutralize overall tone */
-  html { background-color: #7a7a7a; }
+  html { background-color: #0e0e0e; }
   body {
-    background-color: #7a7a7a; /* neutral dark grey */
+    background-color: #0e0e0e; /* near-black background */
     color: #e6e6e6;
   }
   /* Main content and panels */
   div.main { color: #e0e0e0; }
+  /* Darken the name badge slightly in dark mode */
+  h1.myname {
+    background-color: rgba(10, 15, 40, 0.70);
+  }
   div.news,
-  div.sections { background: #6f6f6f; color: #f5f5f5; box-shadow: none; }
+  div.sections {
+    background: #2a2a2a; /* lighter for better contrast with black text */
+    color: #f5f5f5;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.04);
+  }
 
-  /* Headings */
+  /* Headings: match link blue for underline */
   h1.heading,
-  h2.heading { border-bottom-color: #d0d0d0; }
+  h2.heading { border-bottom-color: #7aa6ff; }
 
-  /* Links */
-  a { color: #d9d9d9; }
-  a:hover { color: #efefef; }
+  /* Links: clearer blue tone in dark mode */
+  a { color: #7aa6ff; }
+  a:hover { color: #aecdff; }
   /* Keep top-nav white on dark banner */
   .nav-menu .menu { color: #fff; }
 
   /* Sidebar and tables */
-  aside.socialwidgets-aside { background: #666666; color: #f5f5f5; }
+  aside.socialwidgets-aside {
+    background: #161616; /* brighter, still darker than sections */
+    color: #f5f5f5;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.04);
+  }
   td.bibtexitem { background: #404040; }
+
+  /* Blend transparent logos over dark background for readability */
+  img[src$="Omino-trans.png"],
+  img[src$="quartz-logo-square.png"],
+  img[src$="CIKM.png"] {
+    background-color: transparent; /* remove solid bg */
+    mix-blend-mode: screen;        /* brighten over dark bg */
+  }
+
+  /* Extra boost for OMINO logo: stronger brightness/contrast, no glow */
+  img[src$="Omino-trans.png"] {
+    filter: brightness(100) contrast(0.1) saturate(1000%);
+    -webkit-filter: brightness(100) contrast(0.1) saturate(1000%);
+  }
 
   /* Warmer silvertone profile photo in dark mode (more sepia) */
   img.profilepic { 
