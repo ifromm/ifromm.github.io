@@ -529,6 +529,29 @@ div.banner {
 }
 
 
+/* BibBase mobile fixes: prevent logo overlap */
+@media (max-width: 600px) {
+  body.pub .bibbase-container {
+    position: relative;
+  }
+
+  /* Catch common BibBase attribution/logo variants and make them flow */
+  body.pub .bibbase-container .bibbase_logo,
+  body.pub .bibbase-container .bibbase-logo,
+  body.pub .bibbase-container .bibbase-poweredby,
+  body.pub .bibbase-container .bibbase_icon,
+  body.pub .bibbase-container a[href*="bibbase.org"],
+  body.pub .bibbase-container img[src*="bibbase.org"] {
+    position: static !important;
+    float: none !important;
+    display: block !important;
+    margin: 8px 0 0 0 !important;
+    clear: both !important;
+    z-index: auto !important;
+    opacity: 0.9; /* small visual tweak; still visible */
+  }
+}
+
 
 div.news {
 	padding: 16px;
