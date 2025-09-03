@@ -102,3 +102,7 @@ span.bibbase_icon_text {
 
     vertical-align: text-top;
 }
+/* Ensure each BibBase paper spans 100% of its container */
+div.bibbase_paper {
+    width: 100%;
+}
