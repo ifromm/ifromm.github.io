@@ -1107,12 +1107,12 @@ fab {
 
 	/* Neutralize overall tone */
 	html {
-		background-color: #0e0e0e;
+		background-color: #1d2936;
 	}
 
 	body {
-		background-color: #0e0e0e;
-		/* near-black background */
+		background-color: #22303f;
+		/* softly lit navy charcoal */
 		color: #e6e6e6;
 	}
 
@@ -1123,17 +1123,26 @@ fab {
 
 	/* Darken the name badge slightly in dark mode */
 	h1.myname {
-		background-color: rgba(10, 15, 40, 0.70);
+		background-color: rgba(34, 48, 96, 0.74);
 	}
 
 	div.news,
 	div.sections {
-		background: #2a2a2a;
-		/* lighter for better contrast with black text */
+		background: #343d4d;
+		/* lighter slate for softer contrast */
 		color: #f5f5f5;
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28),
-			inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22),
+			inset 0 1px 0 rgba(255, 255, 255, 0.05);
+	}
+
+	/* Match news accent bar with heading underline */
+	p.new {
+		border-color: #7aa6ff;
+	}
+
+	p.new::before {
+		color: #7aa6ff;
 	}
 
 	/* Headings: match link blue for underline */
@@ -1158,12 +1167,12 @@ fab {
 
 	/* Sidebar and tables */
 	aside.socialwidgets-aside {
-		background: #161616;
-		/* brighter, still darker than sections */
+		background: #273242;
+		/* brighter while staying recessed */
 		color: #f5f5f5;
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28),
-			inset 0 1px 0 rgba(255, 255, 255, 0.04);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22),
+			inset 0 1px 0 rgba(255, 255, 255, 0.05);
 	}
 
 	td.bibtexitem {
@@ -1195,18 +1204,18 @@ fab {
 
 	/* Darker banner for dark mode (higher specificity) */
 	div.banner {
-		background: #1b2a55;
+		background: #2b4a7f;
 	}
 
 	div.banner.sticky {
-		background: #1b2a55;
+		background: #2b4a7f;
 	}
 }
 
 /* Dark mode mobile nav overlay */
 @media (prefers-color-scheme: dark) and (max-width: 900px) {
 	.nav-menu {
-		background: rgba(27, 42, 85, 0.98);
+		background: rgba(43, 74, 127, 0.95);
 		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 	}
 }
