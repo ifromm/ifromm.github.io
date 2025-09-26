@@ -23,40 +23,156 @@ body {
 
 /* moved dark mode block to end for proper override */
 @media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light;
+		--light-body: #f3f5f9;
+		--light-surface: #ffffff;
+		--light-surface-soft: #f8faff;
+		--light-accent: #2b5ec6;
+		--light-accent-soft: #5b86f1;
+		--light-text-primary: #1f2b3d;
+		--light-text-secondary: #4a5a70;
+		--light-border-strong: rgba(43, 94, 198, 0.24);
+		--light-border-soft: rgba(91, 134, 241, 0.12);
+		--light-shadow: 0 18px 38px rgba(37, 55, 102, 0.12);
+	}
+
 	html {
-		background-color: #e5e5e5;
+		background: radial-gradient(circle at 12% 20%, rgba(91, 134, 241, 0.14), transparent 55%), var(--light-body);
 	}
 
 	body {
-		background-color: #dfdfdf;
-		color: inherit;
+		background: radial-gradient(circle at 88% 0%, rgba(43, 94, 198, 0.08), transparent 60%), var(--light-body);
+		color: var(--light-text-primary);
 	}
 
-	/* Ensure light mode keeps original look */
+	div.main {
+		background: none;
+		color: var(--light-text-primary);
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
+		padding: 20px 0 40px 0;
+	}
+
+	h1.myname {
+		background: linear-gradient(135deg, rgba(43, 94, 198, 0.14), rgba(43, 94, 198, 0.28));
+		color: var(--light-text-primary);
+		box-shadow: 0 12px 26px rgba(37, 55, 102, 0.16);
+	}
+
 	div.news,
 	div.sections {
-		background: #d9d9d9;
-		color: black;
-		border: 1px solid rgba(0, 0, 0, 0.06);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
-			inset 0 1px 0 rgba(255, 255, 255, 0.45);
+		background: linear-gradient(155deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 255, 0.85));
+		color: var(--light-text-primary);
+		border: 1px solid var(--light-border-strong);
+		box-shadow: var(--light-shadow);
+		border-radius: 18px;
+	}
+
+	div.sections p,
+	div.news p,
+	div.sections li,
+	div.news li {
+		color: var(--light-text-secondary);
+	}
+
+	p.new {
+		border-color: var(--light-accent);
+		background: rgba(43, 94, 198, 0.08);
+		color: var(--light-text-primary);
+	}
+
+	p.new::before {
+		color: var(--light-accent);
+	}
+
+	h1.heading,
+	h2.heading {
+		border-bottom-color: var(--light-accent);
+		color: var(--light-text-primary);
+	}
+
+	.nav-menu .menu {
+		color: var(--light-text-primary);
+		background: transparent;
+	}
+
+	.nav-menu .menu:hover {
+		background: rgba(43, 94, 198, 0.14);
+		color: var(--light-text-primary);
+	}
+
+	a {
+		color: var(--light-accent);
+		text-decoration-color: rgba(43, 94, 198, 0.3);
+		transition: color 0.2s ease, text-shadow 0.2s ease;
+	}
+
+	a:hover {
+		color: var(--light-accent-soft);
+		text-shadow: 0 0 12px rgba(43, 94, 198, 0.15);
 	}
 
 	aside.socialwidgets-aside {
-		background: #e7e7e7;
-		color: inherit;
-		border: 1px solid rgba(0, 0, 0, 0.06);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08),
-			inset 0 1px 0 rgba(255, 255, 255, 0.45);
+		background: linear-gradient(165deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 255, 0.88));
+		color: var(--light-text-primary);
+		border: 1px solid var(--light-border-strong);
+		box-shadow: var(--light-shadow);
+		border-radius: 18px;
 	}
 
-	div.banner {
-		background: rgba(80, 113, 192, 1.0);
+	div.socialwidgets a {
+		color: var(--light-accent);
+	}
+
+	td.bibtexitem {
+		background: rgba(248, 250, 255, 0.9);
+		border-color: var(--light-border-soft);
+		color: var(--light-text-secondary);
+	}
+
+	table {
+		border-color: var(--light-border-soft);
+	}
+
+	tr:nth-child(even) td {
+		background: rgba(239, 243, 250, 0.65);
 	}
 
 	img.profilepic {
-		filter: drop-shadow(7px 7px 7px #444444);
-		-webkit-filter: drop-shadow(7px 7px 7px #444444);
+		filter: drop-shadow(0 18px 32px rgba(37, 55, 102, 0.22));
+		-webkit-filter: drop-shadow(0 18px 32px rgba(37, 55, 102, 0.22));
+	}
+
+	img[src$="Omino-trans.png"],
+	img[src$="quartz-logo-square.png"],
+	img[src$="CIKM.png"] {
+		filter: brightness(0.95) contrast(1.08);
+		-webkit-filter: brightness(0.95) contrast(1.08);
+	}
+
+	div.banner,
+	div.banner.sticky {
+		background: linear-gradient(130deg, rgba(63, 116, 214, 0.92), rgba(95, 142, 241, 0.88));
+		box-shadow: 0 24px 48px rgba(54, 86, 155, 0.23);
+	}
+
+	div.banner .menu {
+		color: var(--light-surface);
+	}
+
+	p.address,
+	p.address a {
+		color: var(--light-text-secondary);
+	}
+}
+
+@media (prefers-color-scheme: light) and (max-width: 900px) {
+	.nav-menu {
+		background: linear-gradient(150deg, rgba(95, 142, 241, 0.95), rgba(63, 116, 214, 0.9));
+		box-shadow: 0 18px 36px rgba(54, 86, 155, 0.22);
+		border: 1px solid var(--light-border-strong);
 	}
 }
 
@@ -1103,34 +1219,32 @@ fab {
 @media (prefers-color-scheme: dark) {
 	:root {
 		color-scheme: dark;
-		--dark-body: #0e1621;
+		--dark-body: #304864;
 		--dark-accent: #6ea8ff;
 		--dark-accent-soft: #9ec4ff;
 		--dark-text-primary: #e6edf7;
-		--dark-text-secondary: #a1b8d6;
-		--dark-border-strong: rgba(110, 168, 255, 0.28);
-		--dark-border-soft: rgba(158, 196, 255, 0.15);
+		--dark-text-secondary: #cbdcf2;
+		--dark-border-strong: rgba(110, 168, 255, 0.18);
+		--dark-border-soft: rgba(158, 196, 255, 0.08);
 		--dark-shadow: 0 22px 48px rgba(6, 15, 26, 0.55);
 	}
 
 	html {
-		background: radial-gradient(circle at 15% 18%, rgba(110, 168, 255, 0.08), transparent 60%), var(--dark-body);
+		background: radial-gradient(circle at 22% 18%, rgba(110, 168, 255, 0.38), transparent 68%), var(--dark-body);
 	}
 
 	body {
-		background: radial-gradient(circle at 80% 0%, rgba(110, 168, 255, 0.07), transparent 55%), var(--dark-body);
+		background: radial-gradient(circle at 76% -18%, rgba(110, 168, 255, 0.32), transparent 66%), var(--dark-body);
 		color: var(--dark-text-primary);
 	}
 
 	div.main {
-		background: linear-gradient(160deg, rgba(20, 31, 45, 0.94), rgba(20, 31, 45, 0.84));
+		background: none;
 		color: var(--dark-text-primary);
-		border: 1px solid var(--dark-border-soft);
-		box-shadow: var(--dark-shadow);
-		border-radius: 20px;
-		padding: 20px 5% 48px 5%;
-		backdrop-filter: blur(18px);
-		-webkit-backdrop-filter: blur(18px);
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
+		padding: 20px 0 40px 0;
 	}
 
 	h1.myname {
@@ -1141,7 +1255,7 @@ fab {
 
 	div.news,
 	div.sections {
-		background: linear-gradient(155deg, rgba(27, 41, 61, 0.96), rgba(24, 38, 56, 0.88));
+		background: linear-gradient(155deg, rgba(90, 112, 142, 0.86), rgba(76, 97, 126, 0.78));
 		color: var(--dark-text-primary);
 		border: 1px solid var(--dark-border-strong);
 		box-shadow: var(--dark-shadow);
@@ -1177,7 +1291,7 @@ fab {
 	}
 
 	.nav-menu .menu:hover {
-		background: rgba(110, 168, 255, 0.18);
+		background: rgba(110, 168, 255, 0.4);
 		color: var(--dark-text-primary);
 	}
 
@@ -1193,7 +1307,7 @@ fab {
 	}
 
 	aside.socialwidgets-aside {
-		background: linear-gradient(165deg, rgba(27, 42, 62, 0.9), rgba(24, 38, 56, 0.82));
+		background: linear-gradient(165deg, rgba(94, 118, 148, 0.85), rgba(76, 99, 129, 0.78));
 		color: var(--dark-text-primary);
 		border: 1px solid var(--dark-border-strong);
 		box-shadow: var(--dark-shadow);
@@ -1207,7 +1321,7 @@ fab {
 	}
 
 	td.bibtexitem {
-		background: rgba(27, 41, 61, 0.85);
+		background: rgba(90, 112, 142, 0.68);
 		border-color: var(--dark-border-soft);
 		color: var(--dark-text-secondary);
 	}
@@ -1217,12 +1331,12 @@ fab {
 	}
 
 	tr:nth-child(even) td {
-		background: rgba(18, 27, 39, 0.75);
+		background: rgba(62, 80, 104, 0.5);
 	}
 
 	img.profilepic {
-		filter: drop-shadow(0 22px 38px rgba(5, 11, 19, 0.65)) saturate(110%) contrast(1.05);
-		-webkit-filter: drop-shadow(0 22px 38px rgba(5, 11, 19, 0.65)) saturate(110%) contrast(1.05);
+		filter: drop-shadow(0 14px 24px rgba(14, 26, 40, 0.45)) saturate(104%) contrast(1.0) brightness(0.92);
+		-webkit-filter: drop-shadow(0 14px 24px rgba(14, 26, 40, 0.45)) saturate(104%) contrast(1.0) brightness(0.92);
 	}
 
 	img[src$="Omino-trans.png"],
@@ -1235,8 +1349,8 @@ fab {
 
 	div.banner,
 	div.banner.sticky {
-		background: linear-gradient(130deg, rgba(33, 53, 90, 0.95), rgba(53, 86, 141, 0.92));
-		box-shadow: 0 24px 48px rgba(4, 10, 20, 0.6);
+		background: linear-gradient(130deg, rgba(92, 118, 154, 0.86), rgba(114, 140, 178, 0.8));
+		box-shadow: 0 24px 48px rgba(15, 28, 44, 0.42);
 		backdrop-filter: blur(16px) saturate(140%);
 		-webkit-backdrop-filter: blur(16px) saturate(140%);
 	}
@@ -1254,12 +1368,8 @@ fab {
 /* Dark mode mobile nav overlay */
 @media (prefers-color-scheme: dark) and (max-width: 900px) {
 	.nav-menu {
-		background: linear-gradient(150deg, rgba(33, 53, 90, 0.95), rgba(53, 86, 141, 0.9));
+		background: linear-gradient(150deg, rgba(92, 118, 154, 0.84), rgba(114, 140, 178, 0.78));
 		box-shadow: 0 22px 48px rgba(6, 15, 26, 0.5);
 		border: 1px solid var(--dark-border-strong);
-	}
-
-	div.main {
-		padding: 28px 20px 44px 20px;
 	}
 }
