@@ -1103,119 +1103,163 @@ fab {
 @media (prefers-color-scheme: dark) {
 	:root {
 		color-scheme: dark;
+		--dark-body: #0e1621;
+		--dark-accent: #6ea8ff;
+		--dark-accent-soft: #9ec4ff;
+		--dark-text-primary: #e6edf7;
+		--dark-text-secondary: #a1b8d6;
+		--dark-border-strong: rgba(110, 168, 255, 0.28);
+		--dark-border-soft: rgba(158, 196, 255, 0.15);
+		--dark-shadow: 0 22px 48px rgba(6, 15, 26, 0.55);
 	}
 
-	/* Neutralize overall tone */
 	html {
-		background-color: #1d2936;
+		background: radial-gradient(circle at 15% 18%, rgba(110, 168, 255, 0.08), transparent 60%), var(--dark-body);
 	}
 
 	body {
-		background-color: #22303f;
-		/* softly lit navy charcoal */
-		color: #e6e6e6;
+		background: radial-gradient(circle at 80% 0%, rgba(110, 168, 255, 0.07), transparent 55%), var(--dark-body);
+		color: var(--dark-text-primary);
 	}
 
-	/* Main content and panels */
 	div.main {
-		color: #e0e0e0;
+		background: linear-gradient(160deg, rgba(20, 31, 45, 0.94), rgba(20, 31, 45, 0.84));
+		color: var(--dark-text-primary);
+		border: 1px solid var(--dark-border-soft);
+		box-shadow: var(--dark-shadow);
+		border-radius: 20px;
+		padding: 20px 5% 48px 5%;
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
 	}
 
-	/* Darken the name badge slightly in dark mode */
 	h1.myname {
-		background-color: rgba(34, 48, 96, 0.74);
+		background: linear-gradient(140deg, rgba(33, 53, 90, 0.82), rgba(53, 86, 141, 0.76));
+		color: var(--dark-text-primary);
+		box-shadow: 0 12px 32px rgba(9, 18, 32, 0.45);
 	}
 
 	div.news,
 	div.sections {
-		background: #343d4d;
-		/* lighter slate for softer contrast */
-		color: #f5f5f5;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22),
-			inset 0 1px 0 rgba(255, 255, 255, 0.05);
+		background: linear-gradient(155deg, rgba(27, 41, 61, 0.96), rgba(24, 38, 56, 0.88));
+		color: var(--dark-text-primary);
+		border: 1px solid var(--dark-border-strong);
+		box-shadow: var(--dark-shadow);
+		border-radius: 18px;
 	}
 
-	/* Match news accent bar with heading underline */
+	div.sections p,
+	div.news p,
+	div.sections li,
+	div.news li {
+		color: var(--dark-text-secondary);
+	}
+
 	p.new {
-		border-color: #7aa6ff;
+		border-color: var(--dark-accent);
+		background: rgba(110, 168, 255, 0.08);
+		color: var(--dark-text-primary);
 	}
 
 	p.new::before {
-		color: #7aa6ff;
+		color: var(--dark-accent);
 	}
 
-	/* Headings: match link blue for underline */
 	h1.heading,
 	h2.heading {
-		border-bottom-color: #7aa6ff;
+		border-bottom-color: var(--dark-accent);
+		color: var(--dark-text-primary);
 	}
 
-	/* Links: clearer blue tone in dark mode */
+	.nav-menu .menu {
+		color: var(--dark-text-primary);
+		background: transparent;
+	}
+
+	.nav-menu .menu:hover {
+		background: rgba(110, 168, 255, 0.18);
+		color: var(--dark-text-primary);
+	}
+
 	a {
-		color: #7aa6ff;
+		color: var(--dark-accent);
+		text-decoration-color: rgba(110, 168, 255, 0.35);
+		transition: color 0.2s ease, text-shadow 0.2s ease;
 	}
 
 	a:hover {
-		color: #aecdff;
+		color: var(--dark-accent-soft);
+		text-shadow: 0 0 12px rgba(110, 168, 255, 0.4);
 	}
 
-	/* Keep top-nav white on dark banner */
-	.nav-menu .menu {
-		color: #fff;
-	}
-
-	/* Sidebar and tables */
 	aside.socialwidgets-aside {
-		background: #273242;
-		/* brighter while staying recessed */
-		color: #f5f5f5;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22),
-			inset 0 1px 0 rgba(255, 255, 255, 0.05);
+		background: linear-gradient(165deg, rgba(27, 42, 62, 0.9), rgba(24, 38, 56, 0.82));
+		color: var(--dark-text-primary);
+		border: 1px solid var(--dark-border-strong);
+		box-shadow: var(--dark-shadow);
+		border-radius: 18px;
+		backdrop-filter: blur(18px);
+		-webkit-backdrop-filter: blur(18px);
+	}
+
+	div.socialwidgets a {
+		color: var(--dark-accent);
 	}
 
 	td.bibtexitem {
-		background: #404040;
+		background: rgba(27, 41, 61, 0.85);
+		border-color: var(--dark-border-soft);
+		color: var(--dark-text-secondary);
 	}
 
-	/* Blend transparent logos over dark background for readability */
+	table {
+		border-color: var(--dark-border-soft);
+	}
+
+	tr:nth-child(even) td {
+		background: rgba(18, 27, 39, 0.75);
+	}
+
+	img.profilepic {
+		filter: drop-shadow(0 22px 38px rgba(5, 11, 19, 0.65)) saturate(110%) contrast(1.05);
+		-webkit-filter: drop-shadow(0 22px 38px rgba(5, 11, 19, 0.65)) saturate(110%) contrast(1.05);
+	}
+
 	img[src$="Omino-trans.png"],
 	img[src$="quartz-logo-square.png"],
 	img[src$="CIKM.png"] {
 		background-color: transparent;
-		/* remove solid bg */
-		mix-blend-mode: screen;
-		/* brighten over dark bg */
+		filter: brightness(1.15) saturate(1.05);
+		-webkit-filter: brightness(1.15) saturate(1.05);
 	}
 
-	/* Extra boost for OMINO logo: stronger brightness/contrast, no glow */
-	img[src$="Omino-trans.png"] {
-		filter: brightness(100) contrast(0.1) saturate(1000%);
-		-webkit-filter: brightness(100) contrast(0.1) saturate(1000%);
-	}
-
-	/* Warmer silvertone profile photo in dark mode (more sepia) */
-	img.profilepic {
-		/* grayscale + more sepia, warmer hue, balanced saturation */
-		filter: drop-shadow(7px 7px 7px #222222) grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%) brightness(0.86) contrast(1.06);
-		-webkit-filter: drop-shadow(7px 7px 7px #222222) grayscale(40%) sepia(8%) hue-rotate(0deg) saturate(110%) brightness(0.86) contrast(1.06);
-	}
-
-	/* Darker banner for dark mode (higher specificity) */
-	div.banner {
-		background: #2b4a7f;
-	}
-
+	div.banner,
 	div.banner.sticky {
-		background: #2b4a7f;
+		background: linear-gradient(130deg, rgba(33, 53, 90, 0.95), rgba(53, 86, 141, 0.92));
+		box-shadow: 0 24px 48px rgba(4, 10, 20, 0.6);
+		backdrop-filter: blur(16px) saturate(140%);
+		-webkit-backdrop-filter: blur(16px) saturate(140%);
+	}
+
+	div.banner .menu {
+		color: var(--dark-text-primary);
+	}
+
+	p.address,
+	p.address a {
+		color: var(--dark-text-secondary);
 	}
 }
 
 /* Dark mode mobile nav overlay */
 @media (prefers-color-scheme: dark) and (max-width: 900px) {
 	.nav-menu {
-		background: rgba(43, 74, 127, 0.95);
-		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+		background: linear-gradient(150deg, rgba(33, 53, 90, 0.95), rgba(53, 86, 141, 0.9));
+		box-shadow: 0 22px 48px rgba(6, 15, 26, 0.5);
+		border: 1px solid var(--dark-border-strong);
+	}
+
+	div.main {
+		padding: 28px 20px 44px 20px;
 	}
 }
