@@ -724,6 +724,17 @@ div.content {
 	background: transparent;
 }
 
+@media (min-width: 900px) and (max-width: 1279px) {
+	div.main {
+		width: 98%;
+		min-width: auto;
+	}
+
+	div.content {
+		max-width: 98%;
+	}
+}
+
 @media (max-width: 900px) {
 	div.content {
 		max-width: 100%;
@@ -1245,11 +1256,11 @@ fab {
 	}
 
 	html {
-		background: linear-gradient(155deg, rgba(48, 62, 92, 0.9), rgba(54, 49, 74, 0.88));
+		background: linear-gradient(155deg, rgba(38, 52, 90, 0.9), rgba(58, 40, 96, 0.84));
 	}
 
 	body {
-		background: linear-gradient(155deg, rgba(48, 62, 92, 0.9), rgba(54, 49, 74, 0.86));
+		background: linear-gradient(155deg, rgba(38, 52, 90, 0.9), rgba(58, 40, 96, 0.84));
 		color: var(--dark-text-primary);
 	}
 
