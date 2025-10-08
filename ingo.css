@@ -584,17 +584,17 @@ div.main {
 	}
 }
 
-div.banner {
-	margin: 0 auto;
-	/* position: -webkit-sticky; */
-	position: sticky;
-	z-index: 20;
-	top: 0px;
+	div.banner {
+		margin: 0 auto;
+		/* position: -webkit-sticky; */
+		position: sticky;
+		z-index: 20;
+		top: 0px;
 	width: calc(100% - 24px);
 	min-width: 470px;
-	color: white;
-	background: rgba(80, 113, 192, 1.0);
-	border-radius: 18px;
+		color: white;
+		background: rgba(80, 113, 192, 1.0);
+		border-radius: 0 0 18px 18px;
 	/*background: rgba(182,182,182, 1.0);*/
 	/*background-image: url('crystal_text.png');
   background-size: cover;
