@@ -57,8 +57,15 @@
 					hamburger.addEventListener('click', function (event) {
 						event.stopPropagation();
 						var expanded = hamburger.getAttribute('aria-expanded') === 'true';
-						hamburger.setAttribute('aria-expanded', (!expanded).toString());
-						navMenu.classList.toggle('open');
+						var newState = !expanded;
+						hamburger.setAttribute('aria-expanded', newState.toString());
+						hamburger.classList.toggle('active', newState);
+						hamburger.setAttribute('aria-label', newState ? 'Close menu' : 'Open menu');
+						if (newState) {
+							navMenu.classList.add('open');
+						} else {
+							navMenu.classList.remove('open');
+						}
 						console.log('Hamburger clicked, menu toggled');
 					});
 					hamburger.dataset.initialized = 'true';
@@ -76,6 +83,8 @@
 
 						navMenu.classList.remove('open');
 						hamburger.setAttribute('aria-expanded', 'false');
+						hamburger.classList.remove('active');
+						hamburger.setAttribute('aria-label', 'Open menu');
 					});
 					navMenu.dataset.closeOutsideInitialized = 'true';
 				}
@@ -85,6 +94,8 @@
 						if (event.target.closest('a')) {
 							navMenu.classList.remove('open');
 							hamburger.setAttribute('aria-expanded', 'false');
+							hamburger.classList.remove('active');
+							hamburger.setAttribute('aria-label', 'Open menu');
 						}
 					});
 					navMenu.dataset.closeOnSelectionInitialized = 'true';
