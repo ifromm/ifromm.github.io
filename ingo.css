@@ -13,6 +13,11 @@ body {
 	word-spacing: normal;
 }
 
+:root {
+	--banner-frost-overlay: rgba(63, 116, 214, 0.42);
+	--banner-frost-shadow: rgba(54, 86, 155, 0.2);
+}
+
 /* Mobile-first responsive design */
 @media (max-width: 900px) {
 	body {
@@ -35,6 +40,8 @@ body {
 		--light-border-strong: rgba(43, 94, 198, 0.24);
 		--light-border-soft: rgba(91, 134, 241, 0.12);
 		--light-shadow: 0 18px 38px rgba(37, 55, 102, 0.12);
+		--banner-frost-overlay: rgba(63, 116, 214, 0.38);
+		--banner-frost-shadow: rgba(54, 86, 155, 0.18);
 	}
 
 	html {
@@ -242,7 +249,7 @@ a.menu:hover {
 	.hamburger {
 		display: inline-block !important;
 		position: absolute;
-		top: -12px;
+		top: 14px;
 		right: 18px;
 		z-index: 1001;
 	}
@@ -252,6 +259,10 @@ a.menu:hover {
 		padding-right: 60px;
 	}
 
+	div.banner.sticky>div.content {
+		padding-bottom: 8px;
+	}
+
 	/* Ensure proper banner sizing when hamburger menu is active */
 	div.banner {
 		height: 160px;
@@ -259,22 +270,25 @@ a.menu:hover {
 	}
 
 	div.banner.sticky {
-		height: 60px !important;
+		height: auto !important;
+		min-height: 68px;
+		padding: 8px 0 10px;
 	}
 
 	.nav-menu {
 		display: none;
 		flex-direction: column;
-		background: rgba(80, 113, 192, 0.98);
 		position: absolute;
 		top: 60px;
 		right: 10px;
 		left: 10px;
 		padding: 20px 0 10px 0;
 		border-radius: 10px;
+		background: rgba(80, 113, 192, 0.8);
 		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 		z-index: 99;
 		text-align: left;
+		overflow: hidden;
 	}
 
 	.nav-menu.open {
@@ -566,15 +580,16 @@ div.main {
 }
 
 div.banner {
-	margin: 0px auto;
+	margin: 0 auto;
 	/* position: -webkit-sticky; */
 	position: sticky;
 	z-index: 20;
-	top: 0;
-	width: 100%;
+	top: 0px;
+	width: calc(100% - 24px);
 	min-width: 470px;
 	color: white;
 	background: rgba(80, 113, 192, 1.0);
+	border-radius: 18px;
 	/*background: rgba(182,182,182, 1.0);*/
 	/*background-image: url('crystal_text.png');
   background-size: cover;
@@ -583,6 +598,37 @@ div.banner {
   background-blend-mode: overlay;*/
 	height: 200px;
 	/* offsetTop:500; */
+}
+
+div.banner>div.content {
+	position: relative;
+}
+
+div.banner.sticky {
+	height: auto !important;
+	min-height: 60px;
+	padding: 8px 0 14px;
+}
+
+div.banner.sticky>div.content {
+	padding-bottom: 12px;
+}
+
+div.banner.transparent,
+div.banner.transparent.sticky {
+	background: var(--banner-frost-overlay);
+	backdrop-filter: blur(28px);
+	-webkit-backdrop-filter: blur(28px);
+	box-shadow: 0 24px 48px var(--banner-frost-shadow);
+	transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+div.banner[style*="transparent"],
+div.banner.sticky[style*="transparent"] {
+	backdrop-filter: blur(28px);
+	-webkit-backdrop-filter: blur(28px);
+	box-shadow: 0 24px 48px var(--banner-frost-shadow);
+	transition: backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
 @media (max-width: 900px) {
@@ -594,8 +640,9 @@ div.banner {
 
 	/* Ensure JavaScript can still control banner height on mobile */
 	div.banner.sticky {
-		height: 20px !important;
-		/* 60px */
+		height: auto !important;
+		min-height: 68px;
+		padding: 8px 0 10px;
 	}
 
 	/* Adjust content padding for smaller screens */
@@ -607,7 +654,7 @@ div.banner {
 	.hamburger {
 		display: inline-block !important;
 		position: absolute;
-		top: 12px;
+		top: 14px;
 		right: 18px;
 		z-index: 1001;
 	}
@@ -615,6 +662,10 @@ div.banner {
 	/* Add padding to banner content to prevent hamburger overlap */
 	div.content {
 		padding-right: 60px;
+	}
+
+	div.banner.sticky>div.content {
+		padding-bottom: 8px;
 	}
 }
 
@@ -1255,6 +1306,8 @@ fab {
 		--dark-border-strong: rgba(224, 227, 240, 0.36);
 		--dark-border-soft: rgba(224, 227, 240, 0.14);
 		--dark-shadow: 0 18px 38px rgba(36, 42, 58, 0.12);
+		--banner-frost-overlay: rgba(37, 70, 140, 0.36);
+		--banner-frost-shadow: rgba(12, 20, 45, 0.24);
 	}
 
 	html {
@@ -1390,9 +1443,9 @@ fab {
 		box-shadow: 0 24px 48px rgba(12, 20, 45, 0.38);
 	}
 
-	div.banner .menu {
-		color: var(--dark-text-primary);
-	}
+div.banner .menu {
+	color: var(--dark-text-primary);
+}
 
 	p.address,
 	p.address a {
@@ -1400,11 +1453,11 @@ fab {
 	}
 }
 
-/* Dark mode mobile nav overlay */
-@media (prefers-color-scheme: dark) and (max-width: 900px) {
-	.nav-menu {
-		background: linear-gradient(150deg, rgba(122, 138, 170, 0.78), rgba(132, 148, 176, 0.72));
-		box-shadow: 0 18px 36px rgba(30, 36, 52, 0.14);
-		border: 1px solid var(--dark-border-strong);
+	/* Dark mode mobile nav overlay */
+	@media (prefers-color-scheme: dark) and (max-width: 900px) {
+		.nav-menu {
+			background: rgba(122, 138, 170, 0.8);
+			box-shadow: 0 18px 36px rgba(30, 36, 52, 0.14);
+			border: 1px solid var(--dark-border-strong);
+		}
 	}
-}
