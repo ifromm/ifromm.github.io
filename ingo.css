@@ -1311,11 +1311,11 @@ fab {
 	}
 
 	html {
-		background: linear-gradient(155deg, rgba(126, 133, 153, 0.82), rgba(108, 115, 134, 0.78));
+		background: var(--dark-body);
 	}
 
 	body {
-		background: linear-gradient(155deg, rgba(126, 133, 153, 0.82), rgba(108, 115, 134, 0.78));
+		background: var(--dark-body);
 		color: var(--dark-text-primary);
 	}
 
