@@ -68,13 +68,20 @@ body {
 		box-shadow: 0 12px 26px rgba(37, 55, 102, 0.16);
 	}
 
-	div.news,
-	div.sections {
+	div.news {
 		background: #ffffff;
 		color: var(--light-text-primary);
 		border: none;
 		box-shadow: var(--light-shadow);
 		border-radius: 18px;
+	}
+
+	div.sections {
+		background: transparent;
+		color: var(--light-text-primary);
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
 	}
 
 	div.sections p,
@@ -761,9 +768,11 @@ div.news {
 div.sections {
 	padding: 16px;
 	/*    margin:1px 0em 1px 1.5em; */
-	background: #ffffff;
+	background: transparent;
 	/*color: black;*/
-	border-radius: 10px;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
 	width: 100%;
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -1360,13 +1369,20 @@ fab {
 		box-shadow: 0 12px 26px rgba(30, 36, 52, 0.16);
 	}
 
-	div.news,
-	div.sections {
+	div.news {
 		background: var(--dark-surface);
 		color: var(--dark-text-primary);
 		border: 1px solid var(--dark-border-soft);
 		box-shadow: var(--dark-shadow);
 		border-radius: 18px;
+	}
+
+	div.sections {
+		background: transparent;
+		color: var(--dark-text-primary);
+		border: none;
+		box-shadow: none;
+		border-radius: 0;
 	}
 
 	div.sections p,
