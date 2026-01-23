@@ -93,7 +93,7 @@ body {
 
 	p.new {
 		border-color: var(--light-accent);
-		background: rgba(43, 94, 198, 0.08);
+		/* background: rgba(43, 94, 198, 0.08); */
 		color: var(--light-text-primary);
 	}
 
@@ -1394,7 +1394,7 @@ fab {
 
 	p.new {
 		border-color: var(--dark-accent);
-		background: rgba(168, 170, 180, 0.08);
+		/* background: rgba(168, 170, 180, 0.08); */
 		color: var(--dark-text-primary);
 	}
 
