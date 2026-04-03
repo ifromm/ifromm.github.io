@@ -1,7 +1,7 @@
 body {
 	background-color: #ffffff;
 	font-family: open_sansregular, Helvetica, Arial, sans-serif;
-	font-size: 18px;
+	font-size: 19px;
 	line-height: 1.45;
 	margin: -20px 0  50px;
 	padding: 0px;
@@ -128,14 +128,6 @@ body {
 		text-shadow: 0 0 12px rgba(43, 94, 198, 0.15);
 	}
 
-	aside.socialwidgets-aside {
-		background: #ffffff;
-		color: var(--light-text-primary);
-		border: none;
-		box-shadow: var(--light-shadow);
-		border-radius: 18px;
-	}
-
 	div.socialwidgets a {
 		color: var(--light-accent);
 	}
@@ -178,7 +170,7 @@ body {
 
 	p.address,
 	p.address a {
-		color: var(--light-text-secondary);
+		color: rgba(20, 30, 80, 0.5);
 	}
 }
 
@@ -322,7 +314,7 @@ a.menu:hover {
 	.nav-menu .menu {
 		display: block;
 		margin: 0 14px;
-		font-size: 1.1em;
+		font-size: 1em;
 		border-radius: 4px;
 		background: none;
 		color: #fff;
@@ -414,11 +406,7 @@ a.menu:hover {
 		white-space: nowrap;
 	}
 
-	/* Fix social media icons overflow */
-	aside.socialwidgets-aside {
-		max-width: 420px;
-		min-width: 420px;
-	}
+	/* aside is fixed-positioned; no flex sizing needed here */
 
 
 	div.socialwidgets p.socialicon {
@@ -629,7 +617,8 @@ div.banner {
   background-repeat:no-repeat;
   background-position: center center;
   background-blend-mode: overlay;*/
-	height: 200px;
+	height: auto;
+	padding-bottom: 6px;
 	/* offsetTop:500; */
 }
 
@@ -667,8 +656,7 @@ div.banner.sticky[style*="transparent"] {
 @media (max-width: 900px) {
 	div.banner {
 		min-width: auto;
-		height: 160px;
-		min-height: 20px;
+		height: auto;
 	}
 
 	/* Ensure JavaScript can still control banner height on mobile */
@@ -715,21 +703,10 @@ div.banner.sticky[style*="transparent"] {
 		width: 100%;
 	}
 
-	/*
-  div.banner {
-    min-width: auto;
-    height: 140px;
-    min-height: 20px;
-  }
-
-  div.banner.sticky {
-    height: 20px !important;
-  }
-
-  div.sticky+div.content {
-    padding-top: 160px;
-  }
-*/
+	/* Let banner grow to fit all content (name, icons, address) */
+	div.banner {
+		height: auto;
+	}
 }
 
 
@@ -886,19 +863,20 @@ div.info {
 		text-align: left;
 		min-width: auto;
 		font-size: 10pt;
-		margin: 10px 0;
+		margin: 10px 0 0 0;
 		padding-left: 10px;
 	}
 }
 
 p.address {
 	text-align: right;
-	color: white;
+	color: rgba(20, 30, 80, 0.5);
+	margin: 0;
 }
 
 @media (max-width: 900px) {
 	p.address {
-		text-align: left;
+		text-align: right;
 	}
 }
 
@@ -909,6 +887,59 @@ p.address {
   }
 }
 */
+
+p.banner-socialicon {
+	text-align: right;
+	margin: 4px 0 0 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	gap: 4px;
+	overflow: hidden;
+}
+
+p.banner-socialicon a {
+	font-size: 20px;
+	color: rgba(20, 30, 80, 0.5);
+	line-height: 1;
+	padding: 2px;
+	text-decoration: none;
+	flex-shrink: 0;
+}
+
+p.banner-socialicon a:hover {
+	color: rgba(20, 30, 80, 0.8);
+}
+
+@media (max-width: 900px) {
+	p.banner-socialicon {
+		justify-content: flex-end;
+		gap: 3px;
+	}
+	p.banner-socialicon a {
+		font-size: 17px;
+		padding: 1px;
+		min-height: 0;
+		line-height: 1;
+	}
+}
+
+@media (max-width: 600px) {
+	p.banner-socialicon a {
+		font-size: 14px;
+		padding: 1px;
+	}
+}
+
+@media (max-width: 420px) {
+	p.banner-socialicon {
+		gap: 2px;
+	}
+	p.banner-socialicon a {
+		font-size: 12px;
+	}
+}
 
 p.address2 {
 	display: none;
@@ -945,7 +976,7 @@ h1.myname {
 		text-align: left;
 		font-size: 1.5em;
 		padding: 8px;
-		margin: 10px 0;
+		margin: 10px 0 4px 0;
 	}
 }
 
@@ -953,7 +984,7 @@ h1.myname {
 	h1.myname {
 		font-size: 1.2em;
 		padding: 6px;
-		margin: 8px 0;
+		margin: 8px 0 4px 0;
 	}
 }
 
@@ -998,28 +1029,6 @@ div.socialwidgets p.socialicon a:hover {
 
 	div.socialwidgets p.socialicon {
 		justify-content: flex-start;
-	}
-}
-
-/* Media sidebar: floats right inside sections on desktop.
-   - Base max-width tuned for typical layouts; overridden on wide screens
-   - Collapses to full width on mobile via the breakpoint below */
-aside.socialwidgets-aside {
-	float: right;
-	padding: 6px;
-	margin: 10px 10px 1px 1.5em;
-	background: #ffffff;
-	max-width: 460px;
-	border-radius: 10px;
-}
-
-@media (max-width: 900px) {
-	aside.socialwidgets-aside {
-		float: none;
-		margin: 20px 0;
-		max-width: 100%;
-		padding: 15px;
-		min-width: 320px;
 	}
 }
 
@@ -1230,10 +1239,6 @@ img.rightfloat {
 		width: 97%;
 	}
 
-	aside.socialwidgets-aside {
-		max-width: 440px;
-	}
-
 	img.profilepic {
 		height: 140px;
 	}
@@ -1259,21 +1264,16 @@ img.rightfloat {
 		margin-right: auto;
 	}
 
-	/* Let sections/news use the full fixed content width */
+	/* Let sections/news use full width of their column */
 	div.sections,
 	div.news {
 		width: 100%;
 		max-width: 100%;
-		min-width: 100%;
+		min-width: 0;
 		margin-left: 0;
 		margin-right: 0;
 	}
 
-	/* Slightly narrower media box if needed to fit comfortably */
-	aside.socialwidgets-aside {
-		max-width: 420px;
-		/* narrower to fit comfortably */
-	}
 }
 
 /*
@@ -1433,14 +1433,6 @@ fab {
 		text-shadow: 0 0 16px rgba(230, 232, 240, 0.25);
 	}
 
-	aside.socialwidgets-aside {
-		background: var(--dark-surface-soft);
-		color: var(--dark-text-primary);
-		border: 1px solid var(--dark-border-soft);
-		box-shadow: var(--dark-shadow);
-		border-radius: 18px;
-	}
-
 	div.socialwidgets a {
 		color: var(--dark-accent);
 	}
@@ -1495,7 +1487,7 @@ div.banner .menu {
 
 	p.address,
 	p.address a {
-		color: var(--dark-text-secondary);
+		color: rgba(20, 30, 80, 0.5);
 	}
 }
 
