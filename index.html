@@ -167,28 +167,67 @@
 
 			<!-- Any news goes here  -->
 			<div class="news">
-				
 				<h1 class="heading">What's going on</h1>
-				<p class="new"><a href="https://www.dagstuhl.de/26382" target="_blank" rel="noopener noreferrer" style="float:right; margin:0 0 12px 24px; display:inline-block;">
-					<img src="https://www.dagstuhl.de/storage/media/0007/7240/conversions/26382.01.s.jpg"
-						alt="Frontiers of Technology Assisted Review Systems Dagstuhl Seminar"
-						style="max-width:220px; width:100%; height:auto; display:block; border-radius:6px;" />
-				</a> I attended the <a href="https://www.dagstuhl.de/26382">Frontiers of Technology Assisted Review Systems Dagstuhl Seminar</a>. Technology-Assisted Review (TAR) systems support high-recall tasks such as eDiscovery and (automated) systematic reviews. We touched on issues such as evaluation, automation, reproducibility and further issues related to TAR systems.
-				</p>
-				<p class="new">I had the pleasure to visit <a href="https://dr.ntu.edu.sg/entities/person/Erik-Cambria">Erik Cambria</a>'s group at NTU Singapore for an OMINO secondment. I had lots of inspiring talks and exchanges with students and staff members. I also had the opportunity to visit <a href="https://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> at NUS Singapore. I gave a talk on "Fake Science" and Information Overload in Academia, which was recorded and can be watched <a href="https://www.youtube.com/watch?v=NSUJPP5UkfY">here on YouTube</a>. Also great to catch up with <a href="https://kokiljaidka.github.io">Kokil Jaidka</a>!</p>
 
-				<p class="new">I'm happy to be Short Paper Chair for <a href="https://www.ecir2027.co.uk">ECIR 2027 in Southampton, UK</a>. ECIR is Europe's leading Information Retrieval conference. Our <a href="https://www.ecir2027.co.uk/call-for-short-papers">call for papers</a> provides further submission information.</p>
-				<p class="new">
-<b><a href="https://www.bcs.org/events-calendar/2026/november/search-solutions-2026/">Search Solutions 2026</a> – Call for Proposals:</b>
-Search Solutions 2026 is the premier UK forum for innovations in search and information retrieval, celebrating its 20th anniversary this year. The event brings together practitioners, researchers, analysts and end users to share the latest developments across the IR community. SS 2026 will be held at the BCS London office on Wednesday 25th November, with tutorials on Tuesday 24th November. I'm co-organising this event; if you want to present, proposals are very welcome. Please contact me for further details. 
+				<div class="news-items">
+					<p class="new news-item"><a href="https://www.dagstuhl.de/26382" target="_blank" rel="noopener noreferrer" style="float:right; margin:0 0 12px 24px; display:inline-block;">
+						<img src="https://www.dagstuhl.de/storage/media/0007/7240/conversions/26382.01.s.jpg"
+							alt="Frontiers of Technology Assisted Review Systems Dagstuhl Seminar"
+							style="max-width:220px; width:100%; height:auto; display:block; border-radius:6px;" />
+					</a> I attended the <a href="https://www.dagstuhl.de/26382">Frontiers of Technology Assisted Review Systems Dagstuhl Seminar</a>. Technology-Assisted Review (TAR) systems support high-recall tasks such as eDiscovery and (automated) systematic reviews. We touched on issues such as evaluation, automation, reproducibility and further issues related to TAR systems.
+					</p>
+					<p class="new news-item">I had the pleasure to visit <a href="https://dr.ntu.edu.sg/entities/person/Erik-Cambria">Erik Cambria</a>'s group at NTU Singapore for an OMINO secondment. I had lots of inspiring talks and exchanges with students and staff members. I also had the opportunity to visit <a href="https://www.comp.nus.edu.sg/~kanmy/">Min-Yen Kan</a> at NUS Singapore. I gave a talk on "Fake Science" and Information Overload in Academia, which was recorded and can be watched <a href="https://www.youtube.com/watch?v=NSUJPP5UkfY">here on YouTube</a>. Also great to catch up with <a href="https://kokiljaidka.github.io">Kokil Jaidka</a>!</p>
 
-				</p>
+					<p class="new news-item">I'm happy to be Short Paper Chair for <a href="https://www.ecir2027.co.uk">ECIR 2027 in Southampton, UK</a>. ECIR is Europe's leading Information Retrieval conference. Our <a href="https://www.ecir2027.co.uk/call-for-short-papers">call for papers</a> provides further submission information.</p>
+					<p class="new news-item extra-news hidden-news">
+						<b><a href="https://www.bcs.org/events-calendar/2026/november/search-solutions-2026/">Search Solutions 2026</a> – Call for Proposals:</b>
+						Search Solutions 2026 is the premier UK forum for innovations in search and information retrieval, celebrating its 20th anniversary this year. The event brings together practitioners, researchers, analysts and end users to share the latest developments across the IR community. SS 2026 will be held at the BCS London office on Wednesday 25th November, with tutorials on Tuesday 24th November. I'm co-organising this event; if you want to present, proposals are very welcome. Please contact me for further details.
+					</p>
 
-				<p class="new">
-					We had a very successful <a href="https://sites.google.com/view/bir-ws/scolia-2026">Workshop on Scholarly Information Access (SCOLIA 2026)</a> at <a href="https://ecir2026.eu/">ECIR 2026</a> where I gave a keynote on information overload in academia.
-				</p>
+					<p class="new news-item extra-news hidden-news">
+						We had a very successful <a href="https://sites.google.com/view/bir-ws/scolia-2026">Workshop on Scholarly Information Access (SCOLIA 2026)</a> at <a href="https://ecir2026.eu/">ECIR 2026</a> where I gave a keynote on information overload in academia.
+					</p>
+				</div>
 
+				<div class="news-toggle" style="margin-top: 8px; text-align: right;">
+					<button type="button" class="news-toggle-btn" data-expanded="false" aria-expanded="false" aria-label="Expand news" title="Expand news" style="display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; padding:0; border:1px solid #c9d6f0; border-radius:999px; background:#f4f7ff; color:#2b5ec6; cursor:pointer; font-weight:600; line-height:1;">
+						<span class="chevron" aria-hidden="true">▾</span>
+					</button>
+				</div>
 			</div>
+
+			<script>
+				(function () {
+					var extraNews = document.querySelectorAll('.extra-news');
+					var toggleButton = document.querySelector('.news-toggle-btn');
+
+					function setNewsVisibility(expanded) {
+						extraNews.forEach(function (item) {
+							item.style.display = expanded ? 'block' : 'none';
+						});
+
+						if (toggleButton) {
+							var chevron = toggleButton.querySelector('.chevron');
+							if (chevron) {
+								chevron.textContent = expanded ? '▴' : '▾';
+							}
+							toggleButton.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+							toggleButton.dataset.expanded = expanded ? 'true' : 'false';
+							toggleButton.setAttribute('aria-label', expanded ? 'Collapse news' : 'Expand news');
+							toggleButton.setAttribute('title', expanded ? 'Collapse news' : 'Expand news');
+						}
+					}
+
+					if (toggleButton) {
+						toggleButton.addEventListener('click', function () {
+							var shouldExpand = toggleButton.dataset.expanded !== 'true';
+							setNewsVisibility(shouldExpand);
+						});
+					}
+
+					setNewsVisibility(false);
+				})();
+			</script>
 
 			<br /> <br />
 

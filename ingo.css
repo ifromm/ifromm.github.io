@@ -101,6 +101,19 @@ body {
 		color: var(--light-accent);
 	}
 
+	.news-items .hidden-news {
+		display: none;
+	}
+
+	.news-toggle-btn {
+		transition: all 0.2s ease;
+	}
+
+	.news-toggle-btn:hover {
+		background: #edf3ff;
+		border-color: #a9bde9;
+	}
+
 	h1.heading,
 	h2.heading {
 		border-bottom-color: var(--light-accent);
