@@ -30,8 +30,8 @@ body {
 }
 
 /* moved dark mode block to end for proper override */
-@media (prefers-color-scheme: light) {
-	:root {
+/* Theme: light (html[data-theme="light"], set by theme.js) */
+	:root:where([data-theme="light"]) {
 		color-scheme: light;
 		--light-body: #ffffff;
 		--light-surface: #ffffff;
@@ -48,16 +48,16 @@ body {
 		--banner-frost-shadow: rgba(30, 50, 110, 0.28);
 	}
 
-	html {
+	html:where([data-theme="light"]) {
 		background: linear-gradient(155deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 255, 0.85));
 	}
 
-	body {
+	:where(html[data-theme="light"]) body {
 		background: linear-gradient(155deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 255, 0.85));
 		color: var(--light-text-primary);
 	}
 
-	div.main {
+	:where(html[data-theme="light"]) div.main {
 		background: none;
 		color: var(--light-text-primary);
 		border: none;
@@ -66,13 +66,13 @@ body {
 		padding: 20px 0 40px 0;
 	}
 
-	h1.myname {
+	:where(html[data-theme="light"]) h1.myname {
 		background: linear-gradient(135deg, rgba(43, 94, 198, 0.14), rgba(43, 94, 198, 0.28));
 		color: var(--light-text-primary);
 		box-shadow: 0 12px 26px rgba(37, 55, 102, 0.16);
 	}
 
-	div.news {
+	:where(html[data-theme="light"]) div.news {
 		background: #ffffff;
 		color: var(--light-text-primary);
 		border: none;
@@ -80,7 +80,7 @@ body {
 		border-radius: 18px;
 	}
 
-	div.sections {
+	:where(html[data-theme="light"]) div.sections {
 		background: transparent;
 		color: var(--light-text-primary);
 		border: none;
@@ -88,111 +88,111 @@ body {
 		border-radius: 0;
 	}
 
-	div.sections p,
-	div.news p,
-	div.sections li,
-	div.news li {
+	:where(html[data-theme="light"]) div.sections p,
+	:where(html[data-theme="light"]) div.news p,
+	:where(html[data-theme="light"]) div.sections li,
+	:where(html[data-theme="light"]) div.news li {
 		color: var(--light-text-secondary);
 	}
 
-	p.new {
+	:where(html[data-theme="light"]) p.new {
 		border-color: var(--light-accent);
 		/* background: rgba(43, 94, 198, 0.08); */
 		color: var(--light-text-primary);
 	}
 
-	p.new::before {
+	:where(html[data-theme="light"]) p.new::before {
 		color: var(--light-accent);
 	}
 
-	.news-items .hidden-news {
+	:where(html[data-theme="light"]) .news-items .hidden-news {
 		display: none;
 	}
 
-	.news-toggle-btn {
+	:where(html[data-theme="light"]) .news-toggle-btn {
 		transition: all 0.2s ease;
 	}
 
-	.news-toggle-btn:hover {
+	:where(html[data-theme="light"]) .news-toggle-btn:hover {
 		background: #edf3ff;
 		border-color: #a9bde9;
 	}
 
-	h1.heading,
-	h2.heading {
+	:where(html[data-theme="light"]) h1.heading,
+	:where(html[data-theme="light"]) h2.heading {
 		border-bottom-color: var(--light-accent);
 		color: var(--light-text-primary);
 	}
 
-	.nav-menu .menu {
+	:where(html[data-theme="light"]) .nav-menu .menu {
 		color: var(--light-text-primary);
 		background: transparent;
 	}
 
-	.nav-menu .menu:hover {
+	:where(html[data-theme="light"]) .nav-menu .menu:hover {
 		background: rgba(43, 94, 198, 0.14);
 		color: var(--light-text-primary);
 	}
 
-	a {
+	:where(html[data-theme="light"]) a {
 		color: var(--light-accent);
 		text-decoration-color: rgba(43, 94, 198, 0.3);
 		transition: color 0.2s ease, text-shadow 0.2s ease;
 	}
 
-	a:hover {
+	:where(html[data-theme="light"]) a:hover {
 		color: var(--light-accent-soft);
 		text-shadow: 0 0 12px rgba(43, 94, 198, 0.15);
 	}
 
-	div.socialwidgets a {
+	:where(html[data-theme="light"]) div.socialwidgets a {
 		color: var(--light-accent);
 	}
 
-	td.bibtexitem {
+	:where(html[data-theme="light"]) td.bibtexitem {
 		background: rgba(248, 250, 255, 0.9);
 		border-color: var(--light-border-soft);
 		color: var(--light-text-secondary);
 	}
 
-	table {
+	:where(html[data-theme="light"]) table {
 		border-color: var(--light-border-soft);
 	}
 
-	tr:nth-child(even) td {
+	:where(html[data-theme="light"]) tr:nth-child(even) td {
 		background: rgba(239, 243, 250, 0.65);
 	}
 
-	img.profilepic {
+	:where(html[data-theme="light"]) img.profilepic {
 		filter: drop-shadow(0 18px 32px rgba(37, 55, 102, 0.22));
 		-webkit-filter: drop-shadow(0 18px 32px rgba(37, 55, 102, 0.22));
 	}
 
-	img[src$="Omino-trans.png"],
-	img[src$="quartz-logo-square.png"],
-	img[src$="CIKM.png"] {
+	:where(html[data-theme="light"]) img[src$="Omino-trans.png"],
+	:where(html[data-theme="light"]) img[src$="quartz-logo-square.png"],
+	:where(html[data-theme="light"]) img[src$="CIKM.png"] {
 		filter: brightness(0.95) contrast(1.08);
 		-webkit-filter: brightness(0.95) contrast(1.08);
 	}
 
-	body div.banner,
-	body div.banner.sticky {
+	:where(html[data-theme="light"]) body div.banner,
+	:where(html[data-theme="light"]) body div.banner.sticky {
 		background: linear-gradient(130deg, rgba(14, 70, 196, 0.84), rgba(40, 104, 232, 0.8));
 		box-shadow: 0 24px 48px rgba(54, 86, 155, 0.23);
 	}
 
-	div.banner .menu {
+	:where(html[data-theme="light"]) div.banner .menu {
 		color: var(--light-surface);
 	}
 
-	p.address,
-	p.address a {
+	:where(html[data-theme="light"]) p.address,
+	:where(html[data-theme="light"]) p.address a {
 		color: rgba(20, 30, 80, 0.5);
 	}
-}
 
-@media (prefers-color-scheme: light) and (max-width: 900px) {
-	.nav-menu {
+
+@media (max-width: 900px) {
+	:where(html[data-theme="light"]) .nav-menu {
 		background:
 			linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0) 100%),
 			linear-gradient(150deg, rgba(40, 104, 232, 0.55), rgba(14, 70, 196, 0.5));
@@ -206,9 +206,9 @@ body {
 }
 
 /* Light mode, desktop (no hamburger): menu text matches body text */
-@media (prefers-color-scheme: light) and (min-width: 901px) {
-	div.banner .nav-menu .menu,
-	div.banner .nav-menu .sep {
+@media (min-width: 901px) {
+	:where(html[data-theme="light"]) div.banner .nav-menu .menu,
+	:where(html[data-theme="light"]) div.banner .nav-menu .sep {
 		color: var(--light-text-primary);
 	}
 }
@@ -1375,8 +1375,8 @@ fab {
 }
 
 /* Dark mode: placed at end to override base styles */
-@media (prefers-color-scheme: dark) {
-	:root {
+/* Theme: dark (html[data-theme="dark"], set by theme.js) */
+	:root:where([data-theme="dark"]) {
 		color-scheme: dark;
 		--dark-body: #2a3040;
 		--dark-surface: #3a4050;
@@ -1394,16 +1394,16 @@ fab {
 		--banner-frost-shadow: rgba(5, 10, 25, 0.5);
 	}
 
-	html {
+	html:where([data-theme="dark"]) {
 		background: var(--dark-body);
 	}
 
-	body {
+	:where(html[data-theme="dark"]) body {
 		background: var(--dark-body);
 		color: var(--dark-text-primary);
 	}
 
-	div.main {
+	:where(html[data-theme="dark"]) div.main {
 		background: none;
 		color: var(--dark-text-primary);
 		border: none;
@@ -1412,13 +1412,13 @@ fab {
 		padding: 20px 0 40px 0;
 	}
 
-	h1.myname {
+	:where(html[data-theme="dark"]) h1.myname {
 		background: linear-gradient(135deg, rgba(111, 118, 133, 0.42), rgba(122, 128, 142, 0.56));
 		color: var(--dark-text-primary);
 		box-shadow: 0 12px 26px rgba(30, 36, 52, 0.16);
 	}
 
-	div.news {
+	:where(html[data-theme="dark"]) div.news {
 		background: var(--dark-surface);
 		color: var(--dark-text-primary);
 		border: 1px solid var(--dark-border-soft);
@@ -1426,7 +1426,7 @@ fab {
 		border-radius: 18px;
 	}
 
-	div.sections {
+	:where(html[data-theme="dark"]) div.sections {
 		background: transparent;
 		color: var(--dark-text-primary);
 		border: none;
@@ -1434,40 +1434,40 @@ fab {
 		border-radius: 0;
 	}
 
-	div.sections p,
-	div.news p,
-	div.sections li,
-	div.news li {
+	:where(html[data-theme="dark"]) div.sections p,
+	:where(html[data-theme="dark"]) div.news p,
+	:where(html[data-theme="dark"]) div.sections li,
+	:where(html[data-theme="dark"]) div.news li {
 		color: var(--dark-text-secondary);
 	}
 
-	p.new {
+	:where(html[data-theme="dark"]) p.new {
 		border-color: var(--dark-accent);
 		/* background: rgba(168, 170, 180, 0.08); */
 		color: var(--dark-text-primary);
 	}
 
-	p.new::before {
+	:where(html[data-theme="dark"]) p.new::before {
 		color: var(--dark-accent);
 	}
 
-	h1.heading,
-	h2.heading {
+	:where(html[data-theme="dark"]) h1.heading,
+	:where(html[data-theme="dark"]) h2.heading {
 		border-bottom-color: var(--dark-accent);
 		color: var(--dark-text-primary);
 	}
 
-	.nav-menu .menu {
+	:where(html[data-theme="dark"]) .nav-menu .menu {
 		color: var(--dark-text-primary);
 		background: transparent;
 	}
 
-	.nav-menu .menu:hover {
+	:where(html[data-theme="dark"]) .nav-menu .menu:hover {
 		background: rgba(168, 170, 180, 0.1);
 		color: var(--dark-text-primary);
 	}
 
-	a {
+	:where(html[data-theme="dark"]) a {
 		color: #e6e8f0;
 		text-decoration-color: rgba(230, 232, 240, 0.55);
 		text-decoration-thickness: 2px;
@@ -1476,73 +1476,73 @@ fab {
 		transition: color 0.2s ease, text-shadow 0.2s ease, text-decoration-color 0.2s ease;
 	}
 
-	a:hover {
+	:where(html[data-theme="dark"]) a:hover {
 		color: #f2f4fb;
 		text-decoration-color: rgba(242, 244, 251, 0.8);
 		text-shadow: 0 0 16px rgba(230, 232, 240, 0.25);
 	}
 
-	div.socialwidgets a {
+	:where(html[data-theme="dark"]) div.socialwidgets a {
 		color: var(--dark-accent);
 	}
 
-	div.info,
-	div.info p,
-	div.info a,
-	div.info span {
+	:where(html[data-theme="dark"]) div.info,
+	:where(html[data-theme="dark"]) div.info p,
+	:where(html[data-theme="dark"]) div.info a,
+	:where(html[data-theme="dark"]) div.info span {
 		color: #f0f1f5;
 	}
 
-	div.info a {
+	:where(html[data-theme="dark"]) div.info a {
 		text-decoration-color: rgba(240, 241, 245, 0.5);
 	}
 
-	td.bibtexitem {
+	:where(html[data-theme="dark"]) td.bibtexitem {
 		background: rgba(93, 97, 110, 0.62);
 		border-color: var(--dark-border-soft);
 		color: var(--dark-text-secondary);
 	}
 
-	table {
+	:where(html[data-theme="dark"]) table {
 		border-color: var(--dark-border-soft);
 	}
 
-	tr:nth-child(even) td {
+	:where(html[data-theme="dark"]) tr:nth-child(even) td {
 		background: rgba(102, 106, 121, 0.34);
 	}
 
-	img.profilepic {
+	:where(html[data-theme="dark"]) img.profilepic {
 		filter: drop-shadow(0 18px 32px rgba(7, 12, 22, 0.14)) brightness(0.8) saturate(0.8);
 		-webkit-filter: drop-shadow(0 18px 32px rgba(7, 12, 22, 0.14)) brightness(0.8) saturate(0.8);
 	}
 
-	img[src$="Omino-trans.png"],
-	img[src$="quartz-logo-square.png"],
-	img[src$="CIKM.png"] {
+	:where(html[data-theme="dark"]) img[src$="Omino-trans.png"],
+	:where(html[data-theme="dark"]) img[src$="quartz-logo-square.png"],
+	:where(html[data-theme="dark"]) img[src$="CIKM.png"] {
 		background-color: transparent;
 		filter: brightness(0.74) saturate(0.8);
 		-webkit-filter: brightness(0.74) saturate(0.8);
 	}
 
-	div.banner,
-	div.banner.sticky {
+	:where(html[data-theme="dark"]) div.banner,
+	:where(html[data-theme="dark"]) div.banner.sticky {
 		background: linear-gradient(130deg, rgba(11, 61, 168, 0.86), rgba(17, 75, 209, 0.82));
 		box-shadow: 0 24px 48px rgba(12, 20, 45, 0.38);
 	}
 
-div.banner .menu {
+:where(html[data-theme="dark"]) div.banner .menu {
 	color: var(--dark-text-primary);
 }
 
-	p.address,
-	p.address a {
+	:where(html[data-theme="dark"]) p.address,
+	:where(html[data-theme="dark"]) p.address a {
 		color: rgba(20, 30, 80, 0.5);
 	}
-}
+
 
 	/* Dark mode mobile nav overlay */
-	@media (prefers-color-scheme: dark) and (max-width: 900px) {
-		.nav-menu {
+	@media (max-width: 900px) {
+		:where(html[data-theme="dark"]) .nav-menu {
 			background:
 				linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 40%, rgba(255, 255, 255, 0) 100%),
 				rgba(92, 104, 128, 0.5);
@@ -1554,3 +1554,91 @@ div.banner .menu {
 				0 18px 36px rgba(22, 27, 39, 0.3);
 		}
 	}
+
+/* Light/dark toggle (button lives in banner.html, logic in theme.js).
+   Desktop: top right, vertically centred on the "Publications" menu item
+   (whose box is 0-32.5px from the top of the banner content).
+   Mobile: just left of the hamburger, vertically centred on it. */
+.theme-toggle {
+	position: absolute;
+	top: 16px;
+	transform: translateY(-50%);
+	right: 18px;
+	z-index: 1001;
+	background: none;
+	border: none;
+	border-radius: 6px;
+	padding: 6px 8px;
+	margin: 0;
+	cursor: pointer;
+	font-size: 0.55em;
+	line-height: 1;
+	color: var(--light-text-primary, #1f2b3d);
+	transition: background 0.2s ease;
+}
+
+.theme-toggle:hover {
+	background: rgba(255, 255, 255, 0.28);
+}
+
+.theme-toggle:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 2px;
+}
+
+/* Show the mode you would switch to: moon in light mode, sun in dark mode */
+.theme-toggle .fa-sun {
+	display: none;
+}
+
+:where(html[data-theme="dark"]) .theme-toggle {
+	color: var(--dark-text-primary, #f1f1f4);
+}
+
+:where(html[data-theme="dark"]) .theme-toggle:hover {
+	background: rgba(168, 170, 180, 0.18);
+}
+
+:where(html[data-theme="dark"]) .theme-toggle .fa-sun {
+	display: inline-block;
+}
+
+:where(html[data-theme="dark"]) .theme-toggle .fa-moon {
+	display: none;
+}
+
+@media (max-width: 900px) {
+	.theme-toggle {
+		/* centre of the hamburger: top 14px + 52px/2. Toggle sits at the far
+		   right, the hamburger (48px wide) is moved left to make room. */
+		top: 40px;
+		right: 12px;
+		padding: 6px 4px;
+		font-size: 0.7em;
+	}
+
+	.hamburger {
+		right: 28px;
+	}
+}
+
+@media (max-width: 480px) {
+	.theme-toggle {
+		/* hamburger moves up to top 9px here */
+		top: 35px;
+	}
+}
+
+/* Desktop: keep the centred menu clear of the toggle at the top right */
+@media (min-width: 901px) {
+	div.banner .nav-menu {
+		padding: 0 56px;
+	}
+}
+
+/* Mobile, light mode: toggle sits on the blue name bar next to the white hamburger */
+@media (max-width: 900px) {
+	:where(html[data-theme="light"]) .theme-toggle {
+		color: #fff;
+	}
+}
