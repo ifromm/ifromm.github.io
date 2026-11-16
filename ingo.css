@@ -203,6 +203,14 @@ body {
 	}
 }
 
+/* Light mode, desktop (no hamburger): menu text matches body text */
+@media (prefers-color-scheme: light) and (min-width: 901px) {
+	div.banner .nav-menu .menu,
+	div.banner .nav-menu .sep {
+		color: var(--light-text-primary);
+	}
+}
+
 a.menu {
 	color: white;
 	text-decoration: none;
