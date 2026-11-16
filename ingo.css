@@ -14,7 +14,7 @@ body {
 }
 
 :root {
-	--banner-frost-overlay: rgba(255, 255, 255, 0.55);
+	--banner-frost-overlay: rgba(240, 240, 240, 0.55);
 	--banner-frost-sheen: 0.22;
 	--banner-frost-shadow: rgba(30, 50, 110, 0.28);
 }
@@ -41,7 +41,7 @@ body {
 		--light-border-strong: rgba(43, 94, 198, 0.24);
 		--light-border-soft: rgba(91, 134, 241, 0.12);
 		--light-shadow: 0 18px 38px rgba(37, 55, 102, 0.12);
-		--banner-frost-overlay: rgba(255, 255, 255, 0.55);
+		--banner-frost-overlay: rgba(240, 240, 240, 0.55);
 		--banner-frost-sheen: 0.08;
 		--banner-frost-shadow: rgba(30, 50, 110, 0.28);
 	}
